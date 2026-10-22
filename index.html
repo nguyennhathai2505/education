@@ -1,0 +1,1487 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="data:," />
+    <title>Bản Việt — Hệ sinh thái Giáo dục &amp; Công nghệ</title>
+    <meta name="description" content="Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt — hệ sinh thái 4 thương hiệu: Điểm 10+, DanhLingo, Aitechco, Schooli." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        color-scheme: light;
+        --bg:#F6F8FC; --surface:#FFFFFF; --border:#DCE4EF;
+        --navy:#07204A; --navy2:#0B2C5C; --blue:#1565D8; --sky:#EAF2FD;
+        --gold:#FFB703; --ink:#16233A; --slate:#5A6B84;
+        --radius:6px;
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.55}
+      img{max-width:100%}
+      a{color:inherit}
+      .wrap{max-width:1200px;margin:0 auto;padding-left:16px;padding-right:16px}
+      @keyframes bvFade{from{opacity:0}to{opacity:1}}
+      .fade-in{animation:bvFade .35s ease both}
+      @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.fade-in{animation:none}}
+
+      /* ---------- Banner + menu bar ---------- */
+      .banner{position:relative;overflow:hidden;background:var(--navy)}
+      .banner>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+      .banner .shade{position:absolute;inset:0;background:linear-gradient(to right,rgba(7,32,74,.95),rgba(7,32,74,.78) 55%,rgba(7,32,74,.35))}
+      .banner .inner{position:relative;display:flex;align-items:center;padding-top:28px;padding-bottom:28px}
+      .banner a.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+      .logo-plate{display:inline-block;background:#fff;border-radius:6px;padding:8px 12px;box-shadow:0 1px 4px rgba(0,0,0,.25);flex-shrink:0}
+      .logo-plate img{height:48px;width:auto;display:block}
+      .banner .company{color:#fff;line-height:1.35}
+      .banner .company .name{font-weight:700;font-size:15px}
+      .banner .company .tag{margin-top:4px;font-size:14px;font-weight:500;color:rgba(255,255,255,.8)}
+      @media (max-width:767px){.banner .company{display:none}.logo-plate img{height:44px}}
+      @media (min-width:640px){.banner .inner{padding-top:40px;padding-bottom:40px}.logo-plate img{height:64px}}
+
+      .menubar{position:sticky;top:0;z-index:60;background:var(--navy);box-shadow:0 2px 10px rgba(7,32,74,.35)}
+      .menubar .row{display:flex;align-items:center;justify-content:space-between}
+      .menubar ul.main{display:none;list-style:none;margin:0;padding:0;align-items:stretch}
+      @media (min-width:1024px){.menubar ul.main{display:flex}}
+      .menubar ul.main>li{display:flex;position:relative}
+      .navitem{display:flex;align-items:center;gap:6px;padding:14px 16px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;text-decoration:none;background:none;border:0;cursor:pointer;font-family:inherit;transition:background .15s,color .15s}
+      .navitem:hover{background:rgba(255,255,255,.1);color:var(--gold)}
+      .navitem.active{background:rgba(255,255,255,.1);color:var(--gold)}
+      .navitem .caret{font-size:10px;transition:transform .2s}
+      .navitem .caret.open{transform:rotate(180deg)}
+      .dropdown{position:absolute;left:0;top:100%;z-index:70;width:320px;background:#fff;border:1px solid var(--border);box-shadow:0 10px 30px rgba(7,32,74,.18);padding:8px 0}
+      .dropdown a{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;text-decoration:none}
+      .dropdown a:hover{background:var(--sky)}
+      .dropdown a.head{font-weight:700;color:var(--navy)}
+      .dropdown .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px}
+      .dropdown .bname{display:block;font-weight:600;color:var(--ink)}
+      .dropdown .btag{display:block;font-size:13px;color:var(--slate)}
+      .menubar .menu-label{padding:12px 0;font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff}
+      @media (min-width:1024px){.menubar .menu-label{display:none}}
+      .burger{display:flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.4);border-radius:6px;background:none;color:#fff;font-size:18px;cursor:pointer}
+      @media (min-width:1024px){.burger{display:none}}
+      .mobile-menu{border-top:1px solid rgba(255,255,255,.15);background:var(--navy)}
+      .mobile-menu ul{list-style:none;margin:0;padding:8px 0}
+      .mobile-menu a{display:block;padding:12px 4px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1)}
+      .mobile-menu a.active{color:var(--gold)}
+      .mobile-menu .sub{list-style:none;margin:0;padding:4px 0 4px 16px}
+      .mobile-menu .sub a{display:flex;align-items:center;gap:8px;padding:8px 4px;font-size:15px;font-weight:500;text-transform:none;letter-spacing:0;border-bottom:0}
+      .mobile-menu .sub .dot{width:8px;height:8px;border-radius:50%}
+
+      /* ---------- Buttons ---------- */
+      .btn{display:inline-block;border-radius:6px;background:var(--navy);color:#fff;padding:12px 24px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;font-family:inherit;transition:background .15s,border-color .15s,color .15s;text-align:center}
+      .btn:hover{background:var(--blue);border-color:var(--blue)}
+      .btn.blue{background:var(--blue);border-color:var(--blue)}
+      .btn.blue:hover{background:var(--navy);border-color:var(--navy)}
+      .btn-outline{display:inline-block;border-radius:6px;background:#fff;color:var(--navy);padding:11px 24px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--navy);cursor:pointer;font-family:inherit;transition:background .15s,color .15s;text-align:center}
+      .btn-outline:hover{background:var(--navy);color:#fff}
+      .btn-outline.on-dark{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+      .btn-outline.on-dark:hover{background:rgba(255,255,255,.12);color:#fff}
+      .btn-sm{padding:9px 16px;font-size:15px}
+      .btn-brand{display:inline-block;border-radius:6px;padding:9px 16px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid;cursor:pointer;font-family:inherit;background:#fff;transition:background .15s;text-align:center}
+      .btn-brand:hover{background:var(--sky)}
+      .btn-brand-solid{display:inline-block;border-radius:6px;padding:10px 16px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;color:#fff;transition:opacity .15s;text-align:center}
+      .btn-brand-solid:hover{opacity:.9}
+      button:disabled{opacity:.6;cursor:wait}
+
+      /* ---------- Sections & titles ---------- */
+      .section{padding:48px 0}
+      .section.white{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+      .kicker{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin:0}
+      .sec-title{margin:6px 0 0;font-size:28px;font-weight:800;letter-spacing:-.01em;color:var(--navy);line-height:1.25}
+      @media (min-width:640px){.sec-title{font-size:34px}}
+      .gold-rule{display:block;width:64px;height:3px;background:var(--gold);margin-top:12px}
+      .sec-sub{margin:12px 0 0;font-size:16px;line-height:1.65;color:var(--slate);max-width:768px}
+      .page-hero{background:var(--navy);color:#fff}
+      .page-hero .inner{padding-top:36px;padding-bottom:36px}
+      @media (min-width:640px){.page-hero .inner{padding-top:44px;padding-bottom:44px}}
+      .page-hero h1{margin:0;max-width:768px;font-size:30px;font-weight:800;line-height:1.25}
+      @media (min-width:640px){.page-hero h1{font-size:42px}}
+      .page-hero p{margin:12px 0 0;max-width:672px;font-size:17px;line-height:1.65;color:rgba(255,255,255,.85)}
+
+      .breadcrumb{padding-top:20px}
+      .breadcrumb ol{display:flex;flex-wrap:wrap;align-items:center;gap:6px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--slate)}
+      .breadcrumb a{font-weight:500;text-decoration:none}
+      .breadcrumb a:hover{color:var(--blue)}
+      .breadcrumb .cur{font-weight:600;color:var(--ink)}
+
+      /* ---------- Home intro ---------- */
+      .intro-grid{display:grid;gap:36px;align-items:center}
+      @media (min-width:1024px){.intro-grid{grid-template-columns:1fr 1fr}}
+      .intro h1{margin:10px 0 0;font-size:34px;font-weight:900;line-height:1.2;color:var(--navy)}
+      @media (min-width:640px){.intro h1{font-size:42px}}
+      .intro .lead{margin:16px 0 0;font-size:17px;line-height:1.7;color:var(--ink)}
+      .intro .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+      .intro img.photo{width:100%;height:288px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(7,32,74,.15)}
+      @media (min-width:640px){.intro img.photo{height:320px}}
+
+      .finder{margin-top:40px;border:1px solid var(--border);background:var(--bg);padding:16px 20px}
+      .finder .row{display:flex;flex-direction:column;gap:12px}
+      @media (min-width:768px){.finder .row{flex-direction:row;align-items:center}}
+      .finder label{flex-shrink:0;font-size:16px;font-weight:800;color:var(--navy)}
+      .finder select{flex:1;width:100%}
+
+      /* ---------- Infographic số thứ tự ---------- */
+      .numstats{display:grid;gap:36px 32px}
+      @media (min-width:640px){.numstats{grid-template-columns:1fr 1fr}.numstats.c3{grid-template-columns:repeat(3,1fr)}}
+      @media (min-width:1024px){.numstats{grid-template-columns:repeat(4,1fr)}.numstats.c3{grid-template-columns:repeat(3,1fr)}}
+      .numstat{border-top:3px solid var(--navy);padding-top:16px}
+      .numstat .no{font-size:14px;font-weight:900;letter-spacing:.2em;color:var(--blue)}
+      .numstat .val{margin-top:6px;font-size:34px;font-weight:900;line-height:1;color:var(--navy)}
+      @media (min-width:640px){.numstat .val{font-size:36px}}
+      .numstat .lab{margin-top:10px;font-weight:700;color:var(--ink)}
+      .numstat .sub{margin-top:4px;font-size:14px;line-height:1.6;color:var(--slate)}
+
+      /* ---------- Cards ---------- */
+      .grid{display:grid;gap:20px}
+      @media (min-width:640px){.grid.g2{grid-template-columns:1fr 1fr}.grid.g4{grid-template-columns:1fr 1fr}}
+      @media (min-width:1024px){.grid.g3{grid-template-columns:repeat(3,1fr)}.grid.g4{grid-template-columns:repeat(4,1fr)}}
+      .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .card .body{display:flex;flex:1;flex-direction:column;padding:20px}
+      .card img.cover{width:100%;height:176px;object-fit:cover;display:block}
+      .logo-strip{display:flex;align-items:center;padding:12px 20px;background:#fff}
+      .logo-strip img{height:36px;width:auto;max-width:100%;object-fit:contain}
+      .logo-strip.tall img{height:44px}
+      .field{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin:0}
+      .card h3{margin:4px 0 0;font-size:22px;font-weight:800;color:var(--navy)}
+      .card h3 a{text-decoration:none}
+      .card h3 a:hover{text-decoration:underline}
+      .card .tagline{margin-top:2px;font-weight:600;color:var(--slate)}
+      .check-list{list-style:none;margin:14px 0 0;padding:0}
+      .check-list li{display:flex;gap:8px;font-size:15px;line-height:1.6;color:var(--ink);margin-top:8px}
+      .check-list li:first-child{margin-top:0}
+      .card .actions{margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+      .badge{display:inline-block;border-radius:4px;padding:2px 10px;font-size:13px;font-weight:700;background:var(--sky);color:var(--blue)}
+      .meta{font-size:13px;font-weight:600;color:var(--slate);display:flex;align-items:center;gap:8px;margin:0}
+      .card .title-link{font-size:18px;font-weight:700;line-height:1.4;color:var(--navy);text-decoration:none}
+      .card .title-link:hover{text-decoration:underline}
+      .card .excerpt{margin-top:8px;flex:1;font-size:15px;line-height:1.65;color:var(--slate)}
+      .read-more{margin-top:16px;font-weight:700;color:var(--blue);text-decoration:none}
+      .read-more:hover{text-decoration:underline}
+
+      .need-card{display:flex;flex-direction:column;border:1px solid var(--border);background:var(--bg);padding:24px}
+      .need-card h3{margin:0;font-size:20px;font-weight:800;color:var(--navy)}
+      .need-card p{margin-top:8px;flex:1;line-height:1.65;color:var(--slate)}
+      .need-card .btn-brand{align-self:flex-start;margin-top:20px}
+
+      .strength{display:flex;gap:16px}
+      .strength .no{font-size:26px;font-weight:900;line-height:1;color:var(--blue)}
+      .strength h3{margin:0;font-size:18px;font-weight:800;color:var(--navy);line-height:1.35}
+      .strength p{margin:6px 0 0;line-height:1.65;color:var(--slate)}
+      .note-bar{margin-top:36px;border-left:3px solid var(--gold);background:var(--bg);padding:16px 20px;line-height:1.65;color:var(--ink)}
+
+      .partner{border:1px solid var(--border);background:#fff;padding:24px;text-align:center}
+      .partner .pname{font-size:30px;font-weight:900;letter-spacing:-.01em;color:var(--navy);margin:0}
+      .partner .prole{margin-top:4px;font-weight:700;color:var(--blue)}
+      .partner p.desc{margin-top:10px;line-height:1.65;color:var(--slate)}
+
+      /* ---------- Forms ---------- */
+      .field-input{width:100%;border-radius:6px;border:1px solid var(--border);background:#fff;padding:10px 14px;font-size:15px;color:var(--ink);outline:none;font-family:inherit;transition:border-color .15s, box-shadow .15s}
+      .field-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(21,101,216,.18)}
+      .flabel{display:block;margin-bottom:6px;font-size:14px;font-weight:700;color:var(--navy)}
+      .form-grid{display:grid;gap:16px}
+      @media (min-width:640px){.form-grid{grid-template-columns:1fr 1fr}.form-grid .span2{grid-column:span 2}}
+      .form-box{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      @media (min-width:640px){.form-box{padding:28px}}
+      .form-note{margin-top:12px;text-align:center;font-size:13px;color:var(--slate)}
+      .alert-error{margin-top:16px;border-radius:6px;background:#FDECEC;padding:12px 16px;font-size:15px;font-weight:600;color:#B3261E}
+      .success-box{border:1px solid #BFE8D8;background:#EFFAF4;border-radius:8px;padding:24px;text-align:center}
+      .success-box .tick{font-size:36px;color:#137333;margin:0}
+      .success-box h3{margin:8px 0 0;font-size:20px;font-weight:800;color:var(--navy)}
+      .success-box p{margin:8px auto 0;max-width:448px;font-size:15px;line-height:1.65;color:var(--ink)}
+      .submit-btn{width:100%;margin-top:20px;padding:14px;font-size:18px}
+
+      .chip{border-radius:6px;border:2px solid var(--border);background:#fff;color:var(--ink);padding:8px 16px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;transition:border-color .15s,color .15s,background .15s}
+      .chip:hover{border-color:var(--blue);color:var(--blue)}
+      .chip.on{border-color:var(--navy);background:var(--navy);color:#fff}
+      .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+      .filter-box{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .filter-box .fl{font-weight:700;color:var(--navy);margin:0}
+      .count-line{margin-top:28px;font-weight:600;color:var(--slate)}
+      .empty-box{margin-top:16px;border:1px dashed var(--border);border-radius:8px;background:#fff;padding:40px;text-align:center}
+      .empty-box h3{margin:0;font-size:18px;font-weight:700;color:var(--navy)}
+      .empty-box p{margin-top:8px;color:var(--slate)}
+
+      /* ---------- Brand detail ---------- */
+      .brand-hero{color:#fff;margin-top:0}
+      .brand-hero .inner{padding-top:40px;padding-bottom:40px}
+      @media (min-width:640px){.brand-hero .inner{padding-top:56px;padding-bottom:56px}}
+      .brand-hero .fieldline{margin-top:24px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.8);font-size:14px}
+      .brand-hero h1{margin:8px 0 0;font-size:36px;font-weight:900;line-height:1.15}
+      @media (min-width:640px){.brand-hero h1{font-size:48px}}
+      .brand-hero .tagline{margin-top:8px;font-size:20px;font-weight:600;color:rgba(255,255,255,.9)}
+      .brand-hero .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
+      .brand-hero .logo-on-color{height:56px;width:auto;max-width:100%;object-fit:contain}
+      @media (min-width:640px){.brand-hero .logo-on-color{height:64px}}
+      .info-box{margin-top:24px;border-radius:8px;background:var(--sky);padding:20px;font-size:15px;line-height:1.65}
+      .info-box a{font-weight:600;color:var(--blue);text-decoration:none}
+      .info-box a:hover{text-decoration:underline}
+      .slogan-band{margin-top:48px;border-radius:8px;padding:24px;text-align:center;color:#fff}
+      @media (min-width:640px){.slogan-band{padding:32px}}
+      .slogan-band .big{font-size:24px;font-weight:900;letter-spacing:.04em;margin:0}
+      @media (min-width:640px){.slogan-band .big{font-size:30px}}
+      .slogan-band p.sub{margin:12px auto 0;max-width:672px;color:rgba(255,255,255,.9);line-height:1.65}
+      .panel{border:1px solid var(--border);background:#fff;padding:24px}
+      @media (min-width:640px){.panel{padding:32px}}
+      .panel h2{margin:0;font-size:24px;font-weight:800;color:var(--navy)}
+
+      .detail-grid{display:grid;gap:36px;align-items:start}
+      @media (min-width:1024px){.detail-grid{grid-template-columns:1fr 1fr}}
+      .detail-grid img.photo{width:100%;height:288px;object-fit:cover;border-radius:8px;box-shadow:0 1px 4px rgba(7,32,74,.15)}
+      @media (min-width:640px){.detail-grid img.photo{height:384px}}
+      .detail-grid h2,.detail-grid h1{color:var(--navy)}
+      .spec-box{display:grid;gap:12px;border-radius:8px;background:var(--sky);padding:20px;font-size:15px;margin-top:20px}
+      @media (min-width:640px){.spec-box{grid-template-columns:repeat(3,1fr)}}
+      .spec-box dt{font-weight:700;color:var(--slate)}
+      .spec-box dd{margin:2px 0 0;font-weight:600;color:var(--ink)}
+
+      /* ---------- News layout w/ sidebar ---------- */
+      .news-layout{display:grid;gap:40px}
+      @media (min-width:1024px){.news-layout{grid-template-columns:1fr 300px}}
+      .side-box{border:1px solid var(--border);background:#fff;padding:20px}
+      .side-box h2{margin:0;font-size:16px;font-weight:800;color:var(--navy)}
+      .side-box ul{list-style:none;margin:14px 0 0;padding:0}
+      .side-box li{margin-top:16px}
+      .side-box li:first-child{margin-top:0}
+      .side-box li a{font-weight:600;line-height:1.45;color:var(--ink);text-decoration:none}
+      .side-box li a:hover{color:var(--blue);text-decoration:underline}
+      .side-box li p{margin:2px 0 0;font-size:13px;color:var(--slate)}
+      .side-cta{background:var(--navy);padding:20px;color:#fff}
+      .side-cta h2{margin:0;font-size:16px;font-weight:800}
+      .side-cta p{margin-top:8px;font-size:15px;line-height:1.65;color:rgba(255,255,255,.85)}
+      .side-stack{display:flex;flex-direction:column;gap:24px}
+      .cat-list{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+      .cat-list .chip{text-align:left}
+      .mobile-cats{margin-bottom:8px}
+      @media (min-width:1024px){.mobile-cats{display:none}.desktop-only{display:block}}
+      .desktop-only{display:none}
+      article.post h1{margin:12px 0 0;font-size:30px;font-weight:800;line-height:1.3;color:var(--navy)}
+      @media (min-width:640px){article.post h1{font-size:36px}}
+      article.post img.hero{margin-top:24px;width:100%;height:288px;object-fit:cover;border-radius:8px}
+      @media (min-width:640px){article.post img.hero{height:384px}}
+      article.post .excerpt{margin-top:24px;font-size:18px;font-weight:500;line-height:1.7;color:var(--ink)}
+      article.post .para{margin-top:16px;font-size:17px;line-height:1.75;color:var(--ink)}
+      .post-cta{margin-top:36px;border:1px solid var(--border);background:rgba(234,242,253,.6);padding:24px;text-align:center}
+      .post-cta p{margin:0;font-size:18px;font-weight:800;color:var(--navy)}
+
+      /* ---------- Timeline ---------- */
+      .timeline{position:relative;max-width:768px;margin:40px auto 0;list-style:none;padding:0 0 0 32px;border-left:2px solid var(--border)}
+      .timeline li{position:relative;padding-bottom:32px}
+      .timeline li:last-child{padding-bottom:0}
+      .timeline .dot{position:absolute;left:-41px;top:4px;width:24px;height:24px;border-radius:50%;background:var(--navy);box-shadow:0 0 0 4px var(--bg);display:flex;align-items:center;justify-content:center}
+      .timeline .dot::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+      .timeline .yr{font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin:0}
+      .timeline h3{margin:4px 0 0;font-size:20px;font-weight:800;color:var(--navy)}
+      .timeline p.desc{margin:6px 0 0;line-height:1.65;color:var(--slate)}
+      .toc{border:1px solid var(--border);background:#fff;padding:16px 20px;margin-bottom:40px}
+      .toc p{margin:0;font-weight:800;color:var(--navy)}
+      .toc ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin:10px 0 0;padding:0;font-size:15px;font-weight:600}
+      .toc button{background:none;border:0;padding:0;color:var(--blue);font:inherit;cursor:pointer}
+      .toc button:hover{text-decoration:underline}
+      .mini-card{border:1px solid var(--border);background:#fff;border-radius:8px;padding:24px;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .mini-card .no{font-size:30px;font-weight:900;color:#BCD6FA;margin:0}
+      .mini-card h3{margin:8px 0 0;font-size:18px;font-weight:800;color:var(--navy)}
+      .mini-card p{margin:8px 0 0;line-height:1.65;color:var(--slate)}
+
+      /* ---------- Contact ---------- */
+      .contact-grid{display:grid;gap:32px}
+      @media (min-width:1024px){.contact-grid{grid-template-columns:2fr 3fr}}
+      .stack{display:flex;flex-direction:column;gap:20px}
+      .contact-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .contact-card h2{margin:0;font-size:20px;font-weight:800;color:var(--navy)}
+      .contact-card ul{list-style:none;margin:16px 0 0;padding:0;font-size:15px;line-height:1.65;color:var(--slate)}
+      .contact-card li{margin-top:14px}
+      .contact-card li:first-child{margin-top:0}
+      .contact-card a{font-weight:700;color:var(--blue);text-decoration:none}
+      .contact-card a:hover{text-decoration:underline}
+      .zalo-card{background:var(--navy);border-radius:8px;padding:24px;color:#fff;box-shadow:0 1px 3px rgba(7,32,74,.2)}
+      .zalo-card h2{margin:0;font-size:20px;font-weight:800}
+      .zalo-card p{margin-top:8px;color:rgba(255,255,255,.85);line-height:1.65}
+      .zalo-btn{display:inline-block;margin-top:16px;border-radius:6px;background:#0068FF;padding:12px 20px;font-weight:700;color:#fff;text-decoration:none}
+      .zalo-btn:hover{opacity:.9}
+      .brand-link{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:16px 20px;font-weight:700;color:var(--navy);text-decoration:none;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .brand-link:hover{box-shadow:0 4px 12px rgba(7,32,74,.12)}
+      .brand-link .left{display:flex;align-items:center;gap:12px}
+      .brand-link .tag{font-size:14px;font-weight:600;color:var(--slate)}
+      .logo-chip{display:inline-flex;height:32px;width:92px;flex-shrink:0;align-items:center;justify-content:center;overflow:hidden;border-radius:4px;padding:0 6px;background:#fff;border:1px solid var(--border)}
+      .logo-chip img{max-height:24px;width:auto;max-width:100%;object-fit:contain}
+
+      /* ---------- Admin ---------- */
+      .admin-hero{background:var(--navy);border-radius:8px;padding:24px;color:#fff}
+      @media (min-width:640px){.admin-hero{padding:32px}}
+      .demo-tag{display:inline-block;border-radius:999px;background:var(--gold);padding:4px 12px;font-size:13px;font-weight:700;color:var(--navy)}
+      .admin-hero h1{margin:12px 0 0;font-size:30px;font-weight:800}
+      .admin-hero p{margin-top:8px;max-width:672px;color:rgba(255,255,255,.85);line-height:1.65}
+      .stat-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      .stat-card .cap{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin:0}
+      .stat-card .big{margin-top:4px;font-size:48px;font-weight:900;color:var(--navy);line-height:1.1}
+      .stat-card h2{margin:0;font-size:16px;font-weight:800;color:var(--navy)}
+      .hbar{list-style:none;margin:16px 0 0;padding:0}
+      .hbar li{display:grid;grid-template-columns:110px 1fr 64px;align-items:center;gap:12px;margin-top:14px}
+      .hbar li:first-child{margin-top:0}
+      @media (min-width:640px){.hbar li{grid-template-columns:170px 1fr 80px}}
+      .hbar .lb{font-size:14px;font-weight:600;color:var(--ink)}
+      .hbar .track{height:16px;border-radius:999px;background:var(--sky);overflow:hidden;display:block}
+      .hbar .fill{display:block;height:100%;border-radius:999px;transition:width .7s ease}
+      .hbar .vl{text-align:right;font-size:14px;font-weight:700;color:var(--navy)}
+      .status{border-radius:6px;border:1px solid;padding:6px 10px;font-size:13px;font-weight:700}
+      .status.new{background:#FFF4E0;color:#9A6200;border-color:#FFD98A}
+      .status.contacted{background:var(--sky);color:var(--blue);border-color:#BCD6FA}
+      .status.done{background:#E6F6EC;color:#137333;border-color:#A9DFC0}
+      select.status{font-family:inherit;cursor:pointer}
+      .admin-table-wrap{margin-top:16px;overflow-x:auto;border:1px solid var(--border);border-radius:8px;background:#fff;box-shadow:0 1px 3px rgba(7,32,74,.06)}
+      table.admin{width:100%;min-width:880px;border-collapse:collapse;text-align:left;font-size:15px}
+      table.admin th{padding:12px 16px;font-weight:800;color:var(--navy);background:rgba(234,242,253,.6);border-bottom:1px solid var(--border)}
+      table.admin td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+      table.admin tr:last-child td{border-bottom:0}
+      table.admin tr:hover td{background:var(--bg)}
+      .reg-cards{list-style:none;margin:16px 0 0;padding:0}
+      .reg-cards li{background:#fff;border:1px solid var(--border);border-radius:8px;padding:20px;box-shadow:0 1px 3px rgba(7,32,74,.06);margin-top:16px}
+      .reg-cards dl{margin:12px 0 0;font-size:15px;color:var(--slate)}
+      .reg-cards dt{display:inline;font-weight:700;color:var(--ink)}
+      .reg-cards dd{display:inline;margin:0}
+      .reg-cards .row{margin-top:6px}
+      @media (min-width:768px){.reg-cards{display:none}.admin-table-wrap{display:block}}
+      @media (max-width:767px){.admin-table-wrap{display:none}}
+      .local-note{margin-top:20px;border:1px solid #FFD98A;background:#FFF9EC;border-radius:8px;padding:16px 20px;font-size:15px;line-height:1.65;color:var(--ink)}
+
+      /* ---------- Footer ---------- */
+      footer.site{background:var(--navy);color:#fff;margin-top:0}
+      .foot-grid{display:grid;gap:40px;padding:48px 0}
+      @media (min-width:768px){.foot-grid{grid-template-columns:1fr 1fr}}
+      @media (min-width:1024px){.foot-grid{grid-template-columns:repeat(4,1fr)}}
+      footer.site h3{margin:0;font-size:16px;font-weight:700}
+      footer.site ul{list-style:none;margin:16px 0 0;padding:0;font-size:15px;color:rgba(255,255,255,.8)}
+      footer.site li{margin-top:10px}
+      footer.site li:first-child{margin-top:0}
+      footer.site a{color:rgba(255,255,255,.8);text-decoration:none}
+      footer.site a:hover{color:var(--gold)}
+      footer.site a strong,footer.site .wht{color:#fff;font-weight:600}
+      .foot-desc{margin-top:16px;font-size:15px;line-height:1.65;color:rgba(255,255,255,.8)}
+      .member-tag{display:inline-block;margin-top:12px;border:1px solid rgba(255,183,3,.6);border-radius:4px;padding:4px 12px;font-size:13px;font-weight:600;color:var(--gold)}
+      .foot-brand-link{display:flex;align-items:center;gap:12px}
+      .foot-brand-link .logo-chip{height:36px;width:104px}
+      .foot-brand-link .logo-chip img{max-height:28px}
+      .foot-campuses{border-top:1px solid rgba(255,255,255,.15);padding:36px 0}
+      .foot-campuses h3{font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+      .foot-campuses ul{display:grid;gap:12px 40px;margin-top:16px;font-size:14px;line-height:1.65;color:rgba(255,255,255,.75)}
+      @media (min-width:640px){.foot-campuses ul{grid-template-columns:1fr 1fr}}
+      @media (min-width:1024px){.foot-campuses ul{grid-template-columns:repeat(3,1fr)}}
+      .foot-campuses li{margin-top:0}
+      .foot-campuses strong{color:#fff;font-weight:600}
+      .foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding:16px 0;font-size:13px;color:rgba(255,255,255,.7)}
+      .foot-bottom .row{display:flex;flex-direction:column;gap:8px}
+      @media (min-width:640px){.foot-bottom .row{flex-direction:row;align-items:center;justify-content:space-between}}
+      .consult-link{background:none;border:0;padding:0;font:inherit;font-weight:600;color:#fff;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px;cursor:pointer}
+      .consult-link:hover{color:var(--gold)}
+
+      .notfound{text-align:center;padding:80px 0}
+      .notfound .code{font-size:60px;font-weight:900;color:var(--navy);margin:0}
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+"use strict";
+/* =====================================================================
+   BẢN VIỆT — BẢN XUẤT HTML TĨNH (HTML + assets, không cần server)
+   Nội dung & bố cục sao đúng bản website hiện tại. Điều hướng đa trang
+   bằng hash routing phía client; đăng ký tư vấn lưu tại trình duyệt
+   (localStorage) để trang Quản trị demo đọc lại.
+   ===================================================================== */
+
+/* ---------- Dữ liệu (nhúng sẵn từ hệ thống Bản Việt) ---------- */
+var IMG = {
+  hero: "assets/hero-classroom.jpg",
+  kids: "assets/kids-english.jpg",
+  online: "assets/online-class.jpg",
+  tech: "assets/tech-class.jpg",
+  summer: "assets/summer-camp.jpg",
+  discussion: "assets/discussion.jpg",
+  training: "assets/training.jpg",
+  edtech: "assets/edtech.jpg"
+};
+var LOGO_BANVIET = "assets/logo-banviet.png";
+var BRAND_LOGOS = {
+  diem10: "assets/logo-diem10.png",
+  danhlingo: "assets/logo-danhlingo.png",
+  aitechco: "assets/logo-aitechco.png",
+  schooli: "assets/logo-schooli.png"
+};
+var BRAND_STYLE = {
+  diem10:  { primary: "#E2231A", secondary: "#F2C200", headerBg: "#E2231A" },
+  danhlingo:{ primary: "#D61F26", secondary: "#FCB900", headerBg: "#D61F26" },
+  aitechco: { primary: "#32BAEC", secondary: "#FBAF17", headerBg: "#32BAEC" },
+  schooli:  { primary: "#0B6FA4", secondary: "#00A2D4", headerBg: "linear-gradient(120deg, #004080 0%, #0B6FA4 60%, #00A2D4 130%)" }
+};
+var BRAND_FALLBACK_COLOR = { diem10:"#E2231A", danhlingo:"#D61F26", aitechco:"#32BAEC", schooli:"#0B6FA4", "hop-tac":"#1565D8" };
+var STATUS_LABEL = { new: "Mới", contacted: "Đã liên hệ", done: "Đã tư vấn xong" };
+
+var BRANDS = [
+  {
+    slug: "diem10", name: "Điểm 10+", tagline: "Bồi dưỡng văn hóa lớp 6–12 & luyện thi", field: "Giáo dục văn hóa",
+    description: "Trung tâm bồi dưỡng văn hóa Điểm 10+ với triết lý không tư duy thay học viên — giúp học viên phát triển và làm chủ tư duy, tự tin kiến tạo phương pháp học tập khoa học, thông minh, phù hợp nhất. Môi trường “Mở – Thân thiện – Hiệu quả” và phương pháp “Hướng mục tiêu, cá nhân hóa” theo sát tính cách, năng lực và điều kiện của từng học viên.",
+    bullets: ["HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT", "Cá nhân hóa hướng mục tiêu cho từng học viên", "8 cơ sở tại TP.HCM + lớp online toàn quốc", "Chứng chỉ Cambridge Starters, Movers, Flyers"],
+    color: "#E2231A", website: "https://diem10cong.edu.vn", hotline: "0933 39 87 87", email: "", address: "Hệ thống 8 cơ sở tại TP.HCM", imageKey: "kids"
+  },
+  {
+    slug: "danhlingo", name: "DanhLingo", tagline: "Ngoại ngữ Anh – Hoa – Nhật – Hàn", field: "Ngoại ngữ",
+    description: "Ngoại ngữ DanhLingo — “Chúng tôi khác biệt vì hiểu thứ bạn cần”. Ngôn ngữ là công cụ kết nối con người, nên học ngoại ngữ là phải giao tiếp được: chỉ sau 9 tiếng học, học viên đã có thể tự giới thiệu bản thân với phát âm chuẩn. Phương pháp DanhLingo giúp học viên chỉ mất 20% nỗ lực nhưng đạt 80% hiệu quả, trong cộng đồng học viên đa dạng từ sinh viên đến người đi làm.",
+    bullets: ["Chỉ sau 9 tiếng học: tự giới thiệu, phát âm chuẩn", "20% nỗ lực – 80% hiệu quả", "Giao tiếp là trọng tâm của mọi khóa học", "Cộng đồng học viên đa dạng: sinh viên, người đi làm"],
+    color: "#D61F26", website: "https://danhlingo.edu.vn", hotline: "089 992 8787", email: "danhlingo@gmail.com", address: "386/52Bis Lê Văn Sỹ, P. Nhiêu Lộc, TP.HCM (P.14, Q.3)", imageKey: "discussion"
+  },
+  {
+    slug: "aitechco", name: "Aitechco", tagline: "Công nghệ giáo dục", field: "Công nghệ",
+    description: "Aitechco là thương hiệu công nghệ của hệ sinh thái Bản Việt — phụ trách hạ tầng công nghệ và các giải pháp số phục vụ dạy và học cho toàn hệ thống.",
+    bullets: ["Hạ tầng công nghệ cho toàn hệ sinh thái", "Giải pháp số phục vụ dạy và học", "Đồng hành cùng đối tác FPT về hạ tầng công nghệ"],
+    color: "#32BAEC", website: "https://aitechco.vn", hotline: "", email: "", address: "", imageKey: "tech"
+  },
+  {
+    slug: "schooli", name: "Schooli", tagline: "Học trực tuyến", field: "Trực tuyến",
+    description: "Schooli là nền tảng học trực tuyến của hệ sinh thái Bản Việt — đưa lớp học của các thương hiệu trong hệ thống đến với học viên toàn quốc và du học sinh ở nước ngoài.",
+    bullets: ["Học trực tuyến mọi lúc, mọi nơi", "Phục vụ học viên toàn quốc và du học sinh", "Kết nối cùng hệ thống lớp offline của Bản Việt"],
+    color: "#0B6FA4", website: "https://schooli.edu.vn", hotline: "", email: "", address: "Học online — toàn quốc", imageKey: "online"
+  }
+];
+
+var COURSES = [
+  { slug: "tien-tieu-hoc", brandSlug: "diem10", title: "Tiền tiểu học — Hành trang vào lớp 1", audience: "Trẻ chuẩn bị vào lớp 1", ageGroup: "5–6 tuổi",
+    summary: "Hành trang vào lớp 1: làm quen chữ cái, con số và nếp học tập trong môi trường mở, thân thiện.",
+    details: "Chương trình tiền tiểu học của Điểm 10+ giúp trẻ sẵn sàng vào lớp 1: nhận biết chữ cái và con số, rèn nếp ngồi học, kỹ năng tự phục vụ và sự tự tin trước môi trường mới. Lớp học theo triết lý không tạo áp lực — mỗi ngày đến lớp là một niềm vui.",
+    format: "Offline tại cơ sở", imageKey: "kids" },
+  { slug: "bo-duong-6-12", brandSlug: "diem10", title: "Bồi dưỡng văn hóa lớp 6–12", audience: "Học sinh lớp 6–12", ageGroup: "Lớp 6–12",
+    summary: "Toán, KHTN, Lý, Hóa, Ngữ văn, Anh văn từ căn bản đến nâng cao — cá nhân hóa theo năng lực từng học viên.",
+    details: "Lớp bồi dưỡng từ căn bản đến nâng cao cho học sinh lớp 6–12: Toán, Khoa học tự nhiên, Vật lý, Hóa học, Ngữ văn và Anh văn. Giáo viên thấu hiểu tính cách, năng lực và điều kiện của từng học viên, áp dụng phương pháp “Hướng mục tiêu, cá nhân hóa” — HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT.",
+    format: "Offline tại cơ sở + Online", imageKey: "hero" },
+  { slug: "luyen-thi", brandSlug: "diem10", title: "Luyện thi chuyển cấp & đại học", audience: "Học sinh lớp 9, lớp 12 và thí sinh luyện thi", ageGroup: "Lớp 9–12",
+    summary: "Lớp chuyên đề, luyện thi chuyển cấp vào trường chuyên và luyện thi đại học theo mục tiêu của từng học viên.",
+    details: "Các lớp chuyên đề và luyện thi của Điểm 10+: luyện thi chuyển cấp vào trường chuyên, luyện thi đại học. Lộ trình được xây dựng theo mục tiêu điểm số cụ thể của từng học viên, bám sát cấu trúc đề thi và theo dõi tiến độ thường xuyên.",
+    format: "Offline tại cơ sở + Online", imageKey: "hero" },
+  { slug: "cambridge-tre-em", brandSlug: "diem10", title: "Tiếng Anh Cambridge trẻ em", audience: "Học sinh tiểu học và THCS", ageGroup: "7–14 tuổi",
+    summary: "Chứng chỉ tiếng Anh trẻ em chuẩn Cambridge: Starters, Movers, Flyers — lộ trình quốc tế ngay tại Điểm 10+.",
+    details: "Chương trình tiếng Anh trẻ em chuẩn Cambridge tại Điểm 10+ với ba cấp độ Starters, Movers, Flyers. Học viên được học và luyện thi theo khung chương trình quốc tế, xây nền tảng tiếng Anh vững chắc từ sớm.",
+    format: "Offline tại cơ sở", imageKey: "kids" },
+  { slug: "math-science", brandSlug: "diem10", title: "Math & Science bằng tiếng Anh", audience: "Học sinh theo chương trình quốc tế", ageGroup: "Lớp 1–12",
+    summary: "Toán và Khoa học bằng tiếng Anh theo chương trình quốc tế: Math, Science… song hành cùng chương trình Cambridge.",
+    details: "Toán, Khoa học bằng tiếng Anh theo chương trình quốc tế (Math, Science…) tại Điểm 10+ — giúp học viên vừa giỏi chuyên môn vừa thành thạo tiếng Anh học thuật, sẵn sàng cho các chương trình song ngữ và quốc tế.",
+    format: "Offline tại cơ sở + Online", imageKey: "tech" },
+  { slug: "he-ban-tru", brandSlug: "diem10", title: "Khóa hè bán trú TenPlus Summer", audience: "Học sinh trong dịp hè", ageGroup: "6–15 tuổi",
+    summary: "TenPlus Summer — khóa hè bán trú kết hợp ôn tập kiến thức và hoạt động trải nghiệm mỗi mùa hè.",
+    details: "Khóa Hè bán trú TenPlus Summer của Điểm 10+: chương trình hè bán trú giúp học viên vừa củng cố kiến thức, vừa có một mùa hè vui và bổ ích trong môi trường “Mở – Thân thiện – Hiệu quả”.",
+    format: "Offline tại cơ sở (mùa hè)", imageKey: "summer" },
+  { slug: "anh-giao-tiep", brandSlug: "danhlingo", title: "Tiếng Anh giao tiếp", audience: "Sinh viên và người đi làm", ageGroup: "Người lớn",
+    summary: "Chỉ sau 9 tiếng học, bạn đã có thể tự giới thiệu bản thân và có phát âm chuẩn — giao tiếp là trọng tâm.",
+    details: "Khóa Tiếng Anh tại DanhLingo được thiết kế để học viên giao tiếp được thật: chỉ sau 9 tiếng học, bạn đã có thể tự giới thiệu bản thân và có phát âm chuẩn. Phương pháp 20% nỗ lực – 80% hiệu quả, học cùng cộng đồng học viên đa dạng từ sinh viên đến người đi làm — vừa học vừa có thêm mối quan hệ.",
+    format: "Tại trung tâm — Sáng / Tối", imageKey: "discussion" },
+  { slug: "tieng-hoa", brandSlug: "danhlingo", title: "Tiếng Hoa giao tiếp", audience: "Sinh viên và người đi làm", ageGroup: "Người lớn",
+    summary: "Tiếng Hoa tại DanhLingo: học để giao tiếp được, với phương pháp 20% nỗ lực – 80% hiệu quả.",
+    details: "Khóa Tiếng Hoa tại DanhLingo theo đúng triết lý của trung tâm: ngôn ngữ là công cụ kết nối con người, học là để giao tiếp được. Lộ trình tinh gọn, tập trung vào hiệu quả sử dụng thực tế cho sinh viên và người đi làm.",
+    format: "Tại trung tâm — Sáng / Tối", imageKey: "discussion" },
+  { slug: "tieng-nhat", brandSlug: "danhlingo", title: "Tiếng Nhật giao tiếp", audience: "Sinh viên và người đi làm", ageGroup: "Người lớn",
+    summary: "Tiếng Nhật tại DanhLingo: lộ trình giao tiếp thực tế cho sinh viên và người đi làm.",
+    details: "Khóa Tiếng Nhật tại DanhLingo: học ngoại ngữ theo hướng giao tiếp thực tế, trong cộng đồng học viên đa dạng. Thời gian học linh hoạt sáng hoặc tối, phù hợp lịch học và lịch làm việc.",
+    format: "Tại trung tâm — Sáng / Tối", imageKey: "discussion" },
+  { slug: "tieng-han", brandSlug: "danhlingo", title: "Tiếng Hàn giao tiếp", audience: "Sinh viên và người đi làm", ageGroup: "Người lớn",
+    summary: "Tiếng Hàn tại DanhLingo — cùng hệ ngôn ngữ Anh, Hoa, Nhật, Hàn của hệ sinh thái Bản Việt.",
+    details: "DanhLingo đào tạo bốn ngoại ngữ Anh – Hoa – Nhật – Hàn. Khóa Tiếng Hàn áp dụng cùng phương pháp giao tiếp trọng tâm và triết lý “khác biệt vì hiểu thứ bạn cần” của DanhLingo.",
+    format: "Tại trung tâm — Sáng / Tối", imageKey: "discussion" },
+  { slug: "hoc-online-schooli", brandSlug: "schooli", title: "Lớp học trực tuyến Schooli", audience: "Học viên toàn quốc và du học sinh", ageGroup: "Mọi độ tuổi",
+    summary: "Lớp trực tuyến/online của hệ sinh thái Bản Việt — học cùng giáo viên mà không cần đến cơ sở.",
+    details: "Bên cạnh lớp offline, hệ thống Bản Việt có lớp trực tuyến/online phục vụ học viên toàn quốc và du học sinh ở nước ngoài. Schooli là nền tảng học trực tuyến của hệ sinh thái, kết nối học viên với các chương trình của Điểm 10+ và các thương hiệu trong hệ thống.",
+    format: "Online", imageKey: "online" },
+  { slug: "cong-nghe-giao-duc", brandSlug: "aitechco", title: "Giải pháp công nghệ giáo dục Aitechco", audience: "Trường học và tổ chức giáo dục đối tác", ageGroup: "Đối tác",
+    summary: "Hạ tầng công nghệ và giải pháp số cho dạy và học — dành cho đơn vị muốn hợp tác cùng Bản Việt.",
+    details: "Aitechco phụ trách mảng công nghệ của hệ sinh thái Bản Việt: hạ tầng công nghệ phục vụ vận hành dạy và học. Đối tác giáo dục và tổ chức quan tâm hợp tác về hạ tầng công nghệ có thể gửi đăng ký tư vấn để đội ngũ Bản Việt liên hệ trao đổi.",
+    format: "Hợp tác B2B", imageKey: "tech" }
+];
+
+var CAMPUSES = [
+  { id: 1, brandSlug: "diem10", name: "Điểm 10+ Quang Trung", address: "656/15 Quang Trung, P. Thông Tây Hội, TP.HCM (P.11, Q.Gò Vấp)", district: "Gò Vấp", hotline: "0933 39 87 87" },
+  { id: 2, brandSlug: "diem10", name: "Điểm 10+ Nguyễn Cửu Vân", address: "121 Nguyễn Cửu Vân, P. Gia Định, TP.HCM (P.17, Q.Bình Thạnh)", district: "Bình Thạnh", hotline: "0933 39 87 87" },
+  { id: 3, brandSlug: "diem10", name: "Điểm 10+ Tân Canh", address: "05 Tân Canh, P. Tân Sơn Hòa, TP.HCM (P.2, Q.Tân Bình)", district: "Tân Bình", hotline: "0933 39 87 87" },
+  { id: 4, brandSlug: "diem10", name: "Điểm 10+ Lũy Bán Bích", address: "539 Lũy Bán Bích, P. Phú Thạnh, TP.HCM (Q.Tân Phú)", district: "Tân Phú", hotline: "0933 39 87 87" },
+  { id: 5, brandSlug: "diem10", name: "Điểm 10+ Nguyễn Văn Đậu", address: "35/9 Nguyễn Văn Đậu, P. Bình Lợi Trung, TP.HCM (P.6, Q.Bình Thạnh)", district: "Bình Thạnh", hotline: "0933 39 87 87" },
+  { id: 6, brandSlug: "diem10", name: "Điểm 10+ Huỳnh Tấn Phát (1316)", address: "1316 Huỳnh Tấn Phát, P. Tân Mỹ, TP.HCM (P.Phú Mỹ, Q.7)", district: "Quận 7", hotline: "0933 39 87 87" },
+  { id: 7, brandSlug: "diem10", name: "Điểm 10+ Lê Văn Sỹ", address: "386/52Bis Lê Văn Sỹ, P. Nhiêu Lộc, TP.HCM (P.14, Q.3)", district: "Quận 3", hotline: "0933 39 87 87" },
+  { id: 8, brandSlug: "diem10", name: "Điểm 10+ Huỳnh Tấn Phát (1328)", address: "1328 Huỳnh Tấn Phát, P. Tân Mỹ, TP.HCM (P.Phú Mỹ, Q.7)", district: "Quận 7", hotline: "0933 39 87 87" },
+  { id: 9, brandSlug: "danhlingo", name: "DanhLingo Lê Văn Sỹ", address: "386/52Bis Lê Văn Sỹ, P. Nhiêu Lộc, TP.HCM (P.14, Q.3)", district: "Quận 3", hotline: "089 992 8787" },
+  { id: 10, brandSlug: "schooli", name: "Học online / trực tuyến", address: "Toàn quốc và du học sinh ở nước ngoài", district: "Online", hotline: "0933 39 87 87" }
+];
+
+var NEWS = [
+  { slug: "20-10-gui-yeu-thuong", title: "20/10 — Bản Việt gửi yêu thương tới cô giáo và phụ huynh", category: "Bản Việt", date: "2026-10-20",
+    excerpt: "Nhân Ngày Phụ nữ Việt Nam 20/10, Bản Việt gửi lời chúc và tri ân tới các cô giáo, nhân viên nữ và quý phụ huynh trong toàn hệ sinh thái.",
+    body: "Nhân Ngày Phụ nữ Việt Nam 20/10, Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt gửi lời chúc sức khỏe, hạnh phúc và thành công tới toàn thể cô giáo, cán bộ nhân viên nữ trong hệ sinh thái cùng quý phụ huynh.\n\nĐội ngũ giáo viên nữ là lực lượng nòng cốt trong hành trình HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT của Điểm 10+ và trong các lớp ngoại ngữ của DanhLingo — tận tâm, thấu hiểu và đồng hành cùng từng học viên.\n\nBản Việt trân trọng cảm ơn sự tin chọn và đồng hành của quý phụ huynh trong suốt thời gian qua.",
+    imageKey: "discussion" },
+  { slug: "diem10-tron-11-tuoi", title: "Điểm 10+ tròn 11 tuổi — một hành trình HỌC THẬT, THI THẬT", category: "Điểm 10+", date: "2026-10-10",
+    excerpt: "Thương hiệu bồi dưỡng văn hóa của hệ sinh thái Bản Việt kỷ niệm 11 năm đồng hành cùng học sinh lớp 6–12 tại TP.HCM.",
+    body: "Điểm 10+ — thương hiệu bồi dưỡng văn hóa thuộc hệ sinh thái Bản Việt — tròn 11 tuổi. Suốt hành trình đó, trung tâm giữ vững slogan HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT và triết lý không tư duy thay học viên: giúp học viên phát triển và làm chủ tư duy, tự tin kiến tạo phương pháp học tập khoa học, thông minh, phù hợp nhất.\n\nTừ các lớp bồi dưỡng căn bản đến nâng cao, lớp luyện thi chuyển cấp và đại học, chương trình Cambridge trẻ em đến khóa hè TenPlus Summer, Điểm 10+ xây dựng môi trường “Mở – Thân thiện – Hiệu quả” để học viên yêu thích việc học — mỗi ngày đến lớp là một niềm vui.\n\nHệ thống hiện có 8 cơ sở tại TP.HCM cùng lớp học trực tuyến phục vụ học viên toàn quốc và du học sinh ở nước ngoài.",
+    imageKey: "kids" },
+  { slug: "ky-niem-ngay-truyen-thong-ban-viet", title: "Kỷ niệm ngày truyền thống Bản Việt 10/10", category: "Bản Việt", date: "2026-10-10",
+    excerpt: "Ngày truyền thống 10/10 của Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt — tiền thân là IAC, thành lập năm 2010.",
+    body: "Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt kỷ niệm ngày truyền thống 10/10. Tiền thân của Bản Việt là IAC (Giáo dục và Công nghệ Quốc tế Châu Á), thành lập năm 2010.\n\nTừ nền tảng đó, hệ sinh thái Bản Việt hôm nay gồm 4 thương hiệu: Điểm 10+ (bồi dưỡng văn hóa), DanhLingo (ngoại ngữ Anh – Hoa – Nhật – Hàn), Aitechco (công nghệ) và Schooli (học trực tuyến) — cùng hướng tới mục tiêu kiến tạo thế hệ học tập thông minh.\n\nBan lãnh đạo công ty gửi lời tri ân tới đội ngũ giáo viên, nhân viên, phụ huynh và học viên đã đồng hành cùng Bản Việt trong suốt chặng đường phát triển.",
+    imageKey: "hero" },
+  { slug: "khai-truong-co-so-moi-diem10", title: "Khai trương cơ sở mới — Điểm 10+ mở rộng hệ thống tại TP.HCM", category: "Điểm 10+", date: "2026-09-15",
+    excerpt: "Điểm 10+ khai trương cơ sở mới, nâng hệ thống lên 8 cơ sở tại TP.HCM, gần hơn với phụ huynh và học sinh ở nhiều khu vực.",
+    body: "Điểm 10+ chính thức khai trương cơ sở mới, tiếp tục mở rộng hệ thống bồi dưỡng văn hóa tại TP.HCM. Hệ thống Điểm 10+ hiện có mặt tại Gò Vấp, Bình Thạnh, Tân Bình, Tân Phú, Quận 7 và Quận 3, cùng lớp học trực tuyến trên toàn quốc.\n\nCơ sở mới được bố trí theo đúng chuẩn môi trường học tập của Điểm 10+: mở, thân thiện và hiệu quả, với đội ngũ giáo viên áp dụng phương pháp “Hướng mục tiêu, cá nhân hóa” cho từng học viên.\n\nPhụ huynh quan tâm có thể gọi hotline 0933 39 87 87 hoặc để lại thông tin ở mục Đăng ký tư vấn để được hướng dẫn chọn lớp phù hợp.",
+    imageKey: "edtech" },
+  { slug: "tap-huan-pccc-so-cap-cuu-2026", title: "Tập huấn PCCC & sơ cấp cứu 2026 cho đội ngũ Bản Việt", category: "Bản Việt", date: "2026-08-20",
+    excerpt: "Toàn hệ thống Bản Việt tham gia tập huấn phòng cháy chữa cháy và sơ cấp cứu năm 2026 — an toàn của học viên là ưu tiên hàng đầu.",
+    body: "Hệ sinh thái Bản Việt tổ chức tập huấn phòng cháy chữa cháy (PCCC) và sơ cấp cứu năm 2026 cho đội ngũ giáo viên và nhân viên tại các cơ sở.\n\nBuổi tập huấn trang bị kỹ năng xử lý tình huống khẩn cấp, sử dụng thiết bị PCCC và sơ cứu ban đầu — góp phần bảo đảm môi trường học tập an toàn cho học viên tại mọi cơ sở của hệ thống.\n\nĐây là hoạt động định kỳ thể hiện cam kết của Bản Việt: chất lượng giảng dạy chuẩn quốc tế đi cùng sự an toàn và tận tâm trong từng chi tiết vận hành.",
+    imageKey: "training" }
+];
+
+/* ---------- Helpers ---------- */
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function img(key){return IMG[key]||IMG.hero;}
+function brandOf(slug){for(var i=0;i<BRANDS.length;i++)if(BRANDS[i].slug===slug)return BRANDS[i];return null;}
+function courseOf(slug){for(var i=0;i<COURSES.length;i++)if(COURSES[i].slug===slug)return COURSES[i];return null;}
+function campusOf(id){for(var i=0;i<CAMPUSES.length;i++)if(CAMPUSES[i].id===id)return CAMPUSES[i];return null;}
+function brandName(slug){if(slug==="hop-tac")return "Hợp tác";var b=brandOf(slug);return b?b.name:slug;}
+function brandColor(slug){var b=brandOf(slug);return b?b.color:(BRAND_FALLBACK_COLOR[slug]||"#1565D8");}
+function telHref(phone){return "tel:"+String(phone).replace(/[\s.]/g,"");}
+function fmtDate(iso){var p=String(iso).slice(0,10).split("-");return p.length===3?(p[2]+"/"+p[1]+"/"+p[0]):iso;}
+function fmtDateTime(iso){var d=new Date(iso);if(isNaN(d.getTime()))return iso;return d.toLocaleString("vi-VN",{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});}
+function navigate(path){menuOpen=false;ecoOpen=false;if(("#"+path)===location.hash){render();}else{location.hash=path;}}
+function goConsult(brandSlug,courseSlug){var q=[];if(brandSlug)q.push("brand="+encodeURIComponent(brandSlug));if(courseSlug)q.push("course="+encodeURIComponent(courseSlug));navigate("/lien-he"+(q.length?"?"+q.join("&"):""));}
+function parseRoute(){
+  var raw=location.hash.replace(/^#\/?/,"");
+  var qi=raw.indexOf("?");var path=qi>=0?raw.slice(0,qi):raw;
+  var query=new URLSearchParams(qi>=0?raw.slice(qi+1):"");
+  var parts=path.split("/");var page=parts[0]||"home";var param=parts[1]?decodeURIComponent(parts[1]):"";
+  return {page:page,param:param,query:query,path:path};
+}
+
+/* ---------- Lưu trữ đăng ký tại trình duyệt (bản xuất tĩnh) ---------- */
+var LS_KEY = "banviet_registrations_v1";
+var memRegs = null; /* dự phòng khi localStorage không khả dụng */
+function loadRegs(){
+  if (memRegs) return memRegs.slice();
+  try {
+    var raw = localStorage.getItem(LS_KEY);
+    var arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) { return []; }
+}
+function saveRegs(arr){
+  memRegs = arr.slice();
+  try { localStorage.setItem(LS_KEY, JSON.stringify(arr)); } catch (e) { /* vẫn giữ trong bộ nhớ phiên */ }
+}
+function addReg(reg){
+  var arr = loadRegs();
+  var maxId = 0;
+  arr.forEach(function(r){ if (r.id > maxId) maxId = r.id; });
+  reg.id = maxId + 1;
+  reg.createdAt = new Date().toISOString();
+  reg.status = "new";
+  arr.unshift(reg);
+  saveRegs(arr);
+  return reg;
+}
+function setRegStatus(id, status){
+  var arr = loadRegs();
+  arr.forEach(function(r){ if (r.id === id) r.status = status; });
+  saveRegs(arr);
+}
+
+/* ---------- Header: banner hình + menu bar ---------- */
+var NAV = [
+  { label: "Trang chủ", page: "home", hash: "/home" },
+  { label: "Giới thiệu", page: "gioi-thieu", hash: "/gioi-thieu" },
+  { label: "Hệ sinh thái", page: "he-sinh-thai", hash: "/he-sinh-thai" },
+  { label: "Khóa học", page: "khoa-hoc", hash: "/khoa-hoc" },
+  { label: "Tin tức", page: "tin-tuc", hash: "/tin-tuc" },
+  { label: "Liên hệ", page: "lien-he", hash: "/lien-he" },
+  { label: "Quản trị", page: "quan-tri", hash: "/quan-tri" }
+];
+function pageGroup(page){
+  if (page === "thuong-hieu") return "he-sinh-thai";
+  if (page === "khoa-hoc-chi-tiet") return "khoa-hoc";
+  if (page === "bai-viet") return "tin-tuc";
+  return page;
+}
+var menuOpen = false, ecoOpen = false;
+function headerHTML(page){
+  var active = pageGroup(page);
+  function item(n){
+    return '<li><a class="navitem' + (active === n.page ? " active" : "") + '" href="#' + n.hash + '"' + (active === n.page ? ' aria-current="page"' : "") + '>' + n.label + "</a></li>";
+  }
+  var ecoItems = BRANDS.map(function(b){
+    return '<a href="#/thuong-hieu/' + b.slug + '"><span class="dot" style="background:' + b.color + '"></span><span><span class="bname">' + esc(b.name) + '</span><span class="btag">' + esc(b.tagline) + "</span></span></a>";
+  }).join("");
+  var mobileEco = BRANDS.map(function(b){
+    return '<li><a href="#/thuong-hieu/' + b.slug + '"><span class="dot" style="background:' + b.color + '"></span>' + esc(b.name) + " — " + esc(b.field) + "</a></li>";
+  }).join("");
+  var mobileItems = NAV.map(function(n){
+    var s = '<li><a href="#' + n.hash + '"' + (active === n.page ? ' class="active"' : "") + ">" + n.label + "</a>";
+    if (n.page === "he-sinh-thai") s += '<ul class="sub">' + mobileEco + "</ul>";
+    return s + "</li>";
+  }).join("");
+  return '' +
+  '<div class="banner">' +
+    '<img class="bg" src="' + img("hero") + '" alt="" />' +
+    '<div class="shade"></div>' +
+    '<div class="wrap"><div class="inner">' +
+      '<a class="brand" href="#/home" aria-label="Bản Việt — về trang chủ">' +
+        '<span class="logo-plate"><img src="' + LOGO_BANVIET + '" alt="Logo Bản Việt — Bản sắc Việt, giá trị toàn cầu" /></span>' +
+        '<span class="company"><span class="name">Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt</span>' +
+        '<span class="tag" style="display:block">Hệ sinh thái giáo dục &amp; công nghệ — kiến tạo thế hệ học tập thông minh</span></span>' +
+      "</a>" +
+    "</div></div>" +
+  "</div>" +
+  '<nav class="menubar" aria-label="Điều hướng chính"><div class="wrap"><div class="row">' +
+    '<ul class="main">' +
+      item(NAV[0]) + item(NAV[1]) +
+      '<li><button type="button" class="navitem' + (active === "he-sinh-thai" ? " active" : "") + '" id="eco-btn" aria-expanded="' + (ecoOpen ? "true" : "false") + '" aria-haspopup="true">Hệ sinh thái <span class="caret' + (ecoOpen ? " open" : "") + '" aria-hidden="true">▼</span></button>' +
+      (ecoOpen ? '<div class="dropdown" id="eco-dropdown"><a class="head" href="#/he-sinh-thai">Tổng quan hệ sinh thái</a>' + ecoItems + "</div>" : "") +
+      "</li>" +
+      item(NAV[3]) + item(NAV[4]) + item(NAV[5]) + item(NAV[6]) +
+    "</ul>" +
+    '<span class="menu-label">Menu</span>' +
+    '<button type="button" class="burger" id="burger" aria-label="' + (menuOpen ? "Đóng menu" : "Mở menu") + '" aria-expanded="' + (menuOpen ? "true" : "false") + '">' + (menuOpen ? "✕" : "☰") + "</button>" +
+  "</div></div>" +
+  (menuOpen ? '<div class="mobile-menu"><div class="wrap"><ul>' + mobileItems + "</ul></div></div>" : "") +
+  "</nav>";
+}
+
+/* ---------- Footer ---------- */
+function footerHTML(){
+  var navItems = NAV.map(function(n){ return '<li><a href="#' + n.hash + '">' + n.label + "</a></li>"; }).join("");
+  var brandItems = BRANDS.map(function(b){
+    var logo = BRAND_LOGOS[b.slug];
+    var chip = logo ? '<span class="logo-chip" style="' + (b.slug === "danhlingo" ? "background:#D61F26;border-color:#D61F26" : "") + '"><img src="' + logo + '" alt="Logo ' + esc(b.name) + '" loading="lazy" /></span>' : "";
+    return '<li><a class="foot-brand-link" href="#/thuong-hieu/' + b.slug + '">' + chip + "<span>" + esc(b.name) + " — " + esc(b.field) + "</span></a></li>";
+  }).join("");
+  var diem10 = CAMPUSES.filter(function(c){ return c.brandSlug === "diem10"; });
+  var others = CAMPUSES.filter(function(c){ return c.brandSlug !== "diem10"; });
+  var campusItems = diem10.concat(others).map(function(c){
+    return "<li><strong>" + esc(c.name) + ":</strong> " + esc(c.address) + "</li>";
+  }).join("");
+  return '<footer class="site"><div class="wrap">' +
+    '<div class="foot-grid">' +
+      "<div>" +
+        '<span class="logo-plate"><img src="' + LOGO_BANVIET + '" alt="Logo Bản Việt — Bản sắc Việt, giá trị toàn cầu" style="height:44px" /></span>' +
+        '<p class="foot-desc">Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt — tiền thân là IAC, thành lập năm 2010. Kiến tạo thế hệ học tập thông minh.</p>' +
+        '<p class="member-tag">Thành viên hệ sinh thái Bản Việt</p>' +
+      "</div>" +
+      '<nav aria-label="Điều hướng chân trang"><h3>Điều hướng</h3><ul>' + navItems + "</ul></nav>" +
+      '<nav aria-label="Thương hiệu con"><h3>Hệ sinh thái</h3><ul>' + brandItems + "</ul></nav>" +
+      "<div><h3>Liên hệ</h3><ul>" +
+        '<li>Điểm 10+: <a href="' + telHref("0933 39 87 87") + '"><strong>0933 39 87 87</strong></a> · <a href="' + telHref("028 3895 6006") + '"><strong>028 3895 6006</strong></a></li>' +
+        '<li>DanhLingo: <a href="' + telHref("089 992 8787") + '"><strong>089 992 8787</strong></a></li>' +
+        '<li>Email: <a href="mailto:danhlingo@gmail.com"><strong>danhlingo@gmail.com</strong></a></li>' +
+        '<li><button type="button" class="consult-link" data-consult="">Đăng ký tư vấn trực tuyến →</button></li>' +
+      "</ul></div>" +
+    "</div>" +
+    '<div class="foot-campuses"><h3>Hệ thống cơ sở</h3><ul>' + campusItems + "</ul></div>" +
+    "</div>" +
+    '<div class="foot-bottom"><div class="wrap"><div class="row">' +
+      "<p style=\"margin:0\">© 2026 CÔNG TY TNHH ĐẦU TƯ GIÁO DỤC VÀ CÔNG NGHỆ BẢN VIỆT. Bảo lưu mọi quyền.</p>" +
+      '<p style="margin:0">Website con: <a href="https://diem10cong.edu.vn" target="_blank" rel="noreferrer">diem10cong.edu.vn</a> · <a href="https://danhlingo.edu.vn" target="_blank" rel="noreferrer">danhlingo.edu.vn</a> · <a href="https://aitechco.vn" target="_blank" rel="noreferrer">aitechco.vn</a> · <a href="https://schooli.edu.vn" target="_blank" rel="noreferrer">schooli.edu.vn</a></p>' +
+    "</div></div></div>" +
+  "</footer>";
+}
+
+/* ---------- Mảnh giao diện dùng chung ---------- */
+function breadcrumbHTML(items){
+  var lis = items.map(function(it){
+    return '<li style="display:flex;align-items:center;gap:6px"><span aria-hidden="true">›</span>' +
+      (it.hash ? '<a href="' + it.hash + '">' + esc(it.label) + "</a>" : '<span class="cur" aria-current="page">' + esc(it.label) + "</span>") + "</li>";
+  }).join("");
+  return '<nav class="breadcrumb wrap" aria-label="Breadcrumb"><ol><li><a href="#/home">Trang chủ</a></li>' + lis + "</ol></nav>";
+}
+function backBtn(hash, label){
+  return '<button type="button" class="btn-outline btn-sm" data-nav="' + hash + '">← ' + esc(label) + "</button>";
+}
+function pageHeroHTML(title, sub){
+  return '<div class="page-hero"><div class="wrap"><div class="inner"><h1>' + esc(title) + "</h1>" + (sub ? "<p>" + esc(sub) + "</p>" : "") + "</div></div></div>";
+}
+function sectionTitleHTML(kicker, title, sub){
+  return '<div style="max-width:768px">' + (kicker ? '<p class="kicker">' + esc(kicker) + "</p>" : "") +
+    '<h2 class="sec-title">' + esc(title) + '</h2><span class="gold-rule"></span>' +
+    (sub ? '<p class="sec-sub">' + esc(sub) + "</p>" : "") + "</div>";
+}
+function numberedStatsHTML(items, c3){
+  var inner = items.map(function(it, i){
+    return '<div class="numstat"><p class="no" style="margin:0">' + String(i + 1).padStart(2, "0") + '</p><p class="val">' + esc(it.value) + '</p><p class="lab" style="margin-bottom:0">' + esc(it.label) + '</p><p class="sub">' + esc(it.sub) + "</p></div>";
+  }).join("");
+  return '<div class="numstats' + (c3 ? " c3" : "") + '">' + inner + "</div>";
+}
+function brandLogoStripHTML(b, tall){
+  var logo = BRAND_LOGOS[b.slug];
+  if (!logo) return "";
+  var st = BRAND_STYLE[b.slug];
+  var bg = b.slug === "danhlingo" ? "#D61F26" : "#ffffff";
+  return '<div class="logo-strip' + (tall ? " tall" : "") + '" style="background:' + bg + ";border-bottom:3px solid " + (st ? st.secondary : b.color) + '"><img src="' + logo + '" alt="Logo ' + esc(b.name) + '" loading="lazy" /></div>';
+}
+function brandLogoHeaderHTML(b){
+  var logo = BRAND_LOGOS[b.slug];
+  if (!logo) return "";
+  if (b.slug === "danhlingo") return '<img class="logo-on-color" src="' + logo + '" alt="Logo ' + esc(b.name) + '" />';
+  return '<span class="logo-plate" style="padding:10px 14px"><img src="' + logo + '" alt="Logo ' + esc(b.name) + '" style="height:44px" /></span>';
+}
+function brandCardHTML(b, large){
+  var bullets = b.bullets.slice(0, 3).map(function(x){
+    return '<li><span aria-hidden="true" style="color:' + b.color + '">✓</span><span>' + esc(x) + "</span></li>";
+  }).join("");
+  return '<article class="card" style="border-top:4px solid ' + b.color + '">' +
+    '<a href="#/thuong-hieu/' + b.slug + '" aria-label="Xem chi tiết ' + esc(b.name) + '"><img class="cover" style="height:' + (large ? "208px" : "160px") + '" src="' + img(b.imageKey) + '" alt="' + esc(b.name) + " — " + esc(b.tagline) + '" loading="lazy" /></a>' +
+    brandLogoStripHTML(b, large) +
+    '<div class="body">' +
+      '<p class="field" style="color:' + b.color + '">' + esc(b.field) + "</p>" +
+      '<h3><a href="#/thuong-hieu/' + b.slug + '">' + esc(b.name) + "</a></h3>" +
+      '<p class="tagline">' + esc(b.tagline) + "</p>" +
+      '<ul class="check-list">' + bullets + "</ul>" +
+      '<div class="actions">' +
+        '<a class="btn-brand" style="border-color:' + b.color + ";color:" + b.color + '" href="#/thuong-hieu/' + b.slug + '">Xem chi tiết →</a>' +
+        '<a class="btn-outline btn-sm" href="' + b.website + '" target="_blank" rel="noreferrer">Truy cập website ↗</a>' +
+      "</div>" +
+    "</div></article>";
+}
+function courseCardHTML(c){
+  var b = brandOf(c.brandSlug);
+  var color = b ? b.color : "#1565D8";
+  var name = b ? b.name : c.brandSlug;
+  return '<article class="card">' +
+    '<a href="#/khoa-hoc-chi-tiet/' + c.slug + '" aria-label="Xem chi tiết khóa ' + esc(c.title) + '" style="position:relative;display:block">' +
+      '<img class="cover" src="' + img(c.imageKey) + '" alt="' + esc(c.title) + '" loading="lazy" />' +
+      '<span style="position:absolute;left:12px;top:12px;border-radius:4px;padding:4px 12px;font-size:13px;font-weight:700;color:#fff;background:' + color + '">' + esc(name) + "</span></a>" +
+    '<div class="body">' +
+      '<a class="title-link" href="#/khoa-hoc-chi-tiet/' + c.slug + '">' + esc(c.title) + "</a>" +
+      '<p class="meta" style="margin-top:4px">' + esc(c.ageGroup) + " · " + esc(c.format) + "</p>" +
+      '<p class="excerpt">' + esc(c.summary) + "</p>" +
+      '<div class="actions">' +
+        '<a class="btn btn-sm" href="#/khoa-hoc-chi-tiet/' + c.slug + '">Xem chi tiết</a>' +
+        '<button type="button" class="btn-outline btn-sm" data-consult="' + c.brandSlug + "|" + c.slug + '">Đăng ký tư vấn</button>' +
+      "</div>" +
+    "</div></article>";
+}
+function newsCardHTML(n){
+  return '<article class="card">' +
+    '<a href="#/bai-viet/' + n.slug + '" aria-label="Đọc bài: ' + esc(n.title) + '"><img class="cover" src="' + img(n.imageKey) + '" alt="' + esc(n.title) + '" loading="lazy" /></a>' +
+    '<div class="body">' +
+      '<p class="meta"><span class="badge">' + esc(n.category) + "</span>" + fmtDate(n.date) + "</p>" +
+      '<a class="title-link" style="margin-top:10px" href="#/bai-viet/' + n.slug + '">' + esc(n.title) + "</a>" +
+      '<p class="excerpt">' + esc(n.excerpt) + "</p>" +
+      '<a class="read-more" href="#/bai-viet/' + n.slug + '">Đọc tiếp →</a>' +
+    "</div></article>";
+}
+
+/* ---------- Form đăng ký tư vấn ---------- */
+var formSeq = 0;
+function consultFormHTML(opts){
+  opts = opts || {};
+  var compact = !!opts.compact;
+  var preBrand = opts.brand || "diem10";
+  var preCourse = opts.course || "";
+  formSeq += 1;
+  var id = "cf" + formSeq;
+  var brandOpts = BRANDS.map(function(b){
+    return '<option value="' + b.slug + '"' + (b.slug === preBrand ? " selected" : "") + ">" + esc(b.name) + " — " + esc(b.field) + "</option>";
+  }).join("") + '<option value="hop-tac"' + (preBrand === "hop-tac" ? " selected" : "") + ">Hợp tác cùng Bản Việt</option>";
+  var inner =
+  '<form class="consult-form" id="' + id + '" data-brand="' + esc(preBrand) + '" data-course="' + esc(preCourse) + '" novalidate>' +
+    '<div class="form-grid">' +
+      '<div><label class="flabel" for="' + id + '-name">Họ tên *</label><input class="field-input f-name" id="' + id + '-name" placeholder="Nguyễn Văn A" autocomplete="name" /></div>' +
+      '<div><label class="flabel" for="' + id + '-phone">Số điện thoại *</label><input class="field-input f-phone" id="' + id + '-phone" placeholder="09xx xxx xxx" inputmode="tel" autocomplete="tel" /></div>' +
+      '<div><label class="flabel" for="' + id + '-email">Email (không bắt buộc)</label><input class="field-input f-email" id="' + id + '-email" type="email" placeholder="ban@example.com" autocomplete="email" /></div>' +
+      '<div><label class="flabel" for="' + id + '-brand">Nhu cầu / Thương hiệu *</label><select class="field-input f-brand" id="' + id + '-brand">' + brandOpts + "</select></div>" +
+      '<div class="f-course-wrap"><label class="flabel" for="' + id + '-course">Khóa học quan tâm</label><select class="field-input f-course" id="' + id + '-course"></select></div>' +
+      '<div class="f-campus-wrap"><label class="flabel" for="' + id + '-campus">Cơ sở mong muốn</label><select class="field-input f-campus" id="' + id + '-campus"></select></div>' +
+      '<div><label class="flabel" for="' + id + '-time">Thời gian học mong muốn</label><select class="field-input f-time" id="' + id + '-time"><option value="">— Chưa chọn —</option><option value="Sáng">Sáng</option><option value="Tối">Tối</option><option value="Linh hoạt">Linh hoạt</option></select></div>' +
+      '<div class="span2"><label class="flabel" for="' + id + '-note">Ghi chú</label><textarea class="field-input f-note" id="' + id + '-note" rows="' + (compact ? 2 : 3) + '" placeholder="Ví dụ: cần tư vấn lớp cho con học lớp 8…"></textarea></div>' +
+    "</div>" +
+    '<p class="alert-error f-error" role="alert" style="display:none"></p>' +
+    '<button type="submit" class="btn submit-btn">Gửi đăng ký tư vấn</button>' +
+    '<p class="form-note">Thông tin chỉ được lưu tại trình duyệt này (bản HTML xuất tĩnh) để đội ngũ tư vấn liên hệ lại trong bản demo.</p>' +
+  "</form>";
+  return compact ? inner : '<div class="form-box">' + inner + "</div>";
+}
+function refreshFormOptions(form){
+  var brandSlug = form.querySelector(".f-brand").value;
+  var courseSel = form.querySelector(".f-course");
+  var campusSel = form.querySelector(".f-campus");
+  var courseWrap = form.querySelector(".f-course-wrap");
+  var campusWrap = form.querySelector(".f-campus-wrap");
+  var partnership = brandSlug === "hop-tac";
+  courseWrap.style.display = partnership ? "none" : "";
+  var bc = COURSES.filter(function(c){ return c.brandSlug === brandSlug; });
+  var wantCourse = form.getAttribute("data-course") || "";
+  courseSel.innerHTML = '<option value="">— Chưa chọn / cần tư vấn —</option>' + bc.map(function(c){
+    return '<option value="' + c.slug + '"' + (c.slug === wantCourse ? " selected" : "") + ">" + esc(c.title) + "</option>";
+  }).join("");
+  var bk = CAMPUSES.filter(function(c){ return c.brandSlug === brandSlug; });
+  campusWrap.style.display = (!partnership && bk.length > 0) ? "" : "none";
+  campusSel.innerHTML = '<option value="">— Chưa chọn —</option>' + bk.map(function(c){
+    return '<option value="' + c.id + '">' + esc(c.name) + "</option>";
+  }).join("");
+}
+function initConsultForms(){
+  var forms = document.querySelectorAll("form.consult-form");
+  Array.prototype.forEach.call(forms, function(form){
+    refreshFormOptions(form);
+    form.querySelector(".f-brand").addEventListener("change", function(){
+      form.setAttribute("data-course", "");
+      refreshFormOptions(form);
+    });
+    form.addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var err = form.querySelector(".f-error");
+      function fail(msg){ err.textContent = msg; err.style.display = "block"; }
+      err.style.display = "none";
+      var fullName = form.querySelector(".f-name").value.trim();
+      var phone = form.querySelector(".f-phone").value.trim();
+      var email = form.querySelector(".f-email").value.trim();
+      var brandSlug = form.querySelector(".f-brand").value;
+      var courseSlug = brandSlug === "hop-tac" ? "" : form.querySelector(".f-course").value;
+      var campusVal = form.querySelector(".f-campus").value;
+      var studyTime = form.querySelector(".f-time").value;
+      var note = form.querySelector(".f-note").value.trim();
+      if (fullName.length < 2) return fail("Vui lòng nhập họ tên (ít nhất 2 ký tự).");
+      var digits = phone.replace(/[\s.]/g, "");
+      if (!/^0\d{8,10}$/.test(digits)) return fail("Số điện thoại chưa đúng định dạng (bắt đầu bằng 0, 9–11 số).");
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return fail("Email chưa đúng định dạng.");
+      var reg = addReg({
+        fullName: fullName, phone: phone, email: email, brandSlug: brandSlug,
+        courseSlug: courseSlug, campusId: campusVal ? Number(campusVal) : null,
+        studyTime: studyTime, note: note
+      });
+      var bName = brandSlug === "hop-tac" ? "Hợp tác cùng Bản Việt" : brandName(brandSlug);
+      var cObj = courseSlug ? courseOf(courseSlug) : null;
+      var box = document.createElement("div");
+      box.className = "success-box fade-in";
+      box.setAttribute("role", "status");
+      box.innerHTML = '<p class="tick" aria-hidden="true">✓</p><h3>Cảm ơn ' + esc(fullName) + "!</h3>" +
+        "<p>Đăng ký tư vấn <strong>" + esc(bName) + "</strong>" + (cObj ? " — khóa <strong>" + esc(cObj.title) + "</strong>" : "") +
+        " đã được ghi nhận (mã #" + reg.id + "). Đội ngũ Bản Việt sẽ liên hệ tới số <strong>" + esc(phone) + "</strong> trong giờ làm việc.</p>" +
+        '<button type="button" class="btn" style="margin-top:20px" onclick="render()">Gửi thêm đăng ký khác</button>';
+      var parent = form.parentNode;
+      parent.replaceChild(box, form);
+      box.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+}
+
+/* ================= TRANG CHỦ ================= */
+var FINDER_OPTIONS = [
+  { label: "Con chuẩn bị vào lớp 1", hash: "/khoa-hoc?tien-tieu-hoc" },
+  { label: "Con học lớp 6–12", hash: "/khoa-hoc?lop-6-12" },
+  { label: "Luyện thi chuyển cấp / đại học", hash: "/khoa-hoc?luyen-thi" },
+  { label: "Tiếng Anh Cambridge cho trẻ", hash: "/khoa-hoc?cambridge" },
+  { label: "Tôi học ngoại ngữ (Anh/Hoa/Nhật/Hàn)", hash: "/khoa-hoc?nguoi-lon" },
+  { label: "Học trực tuyến / online", hash: "/khoa-hoc?online" }
+];
+function homePage(){
+  var brandCards = BRANDS.map(function(b){
+    var bullets = b.bullets.slice(0, 1).map(function(x){ return x; }).join("");
+    return '<article class="card" style="border-top:3px solid ' + b.color + '">' +
+      brandLogoStripHTML(b, false) +
+      '<div class="body" style="padding-top:16px">' +
+        '<a class="title-link" href="#/thuong-hieu/' + b.slug + '">' + esc(b.name) + "</a>" +
+        '<p class="meta" style="margin-top:2px;font-weight:600;color:' + b.color + '">' + esc(b.field) + "</p>" +
+        '<p class="excerpt">' + esc(b.tagline) + "</p>" +
+        '<div class="actions" style="flex-direction:column;align-items:stretch">' +
+          '<a class="btn-brand" style="border-color:' + b.color + ";color:" + b.color + '" href="#/thuong-hieu/' + b.slug + '">Xem chi tiết</a>' +
+          '<a class="btn-outline btn-sm" href="' + b.website + '" target="_blank" rel="noreferrer">' + b.website.replace("https://", "") + " ↗</a>" +
+        "</div>" +
+      "</div></article>";
+    void bullets;
+  }).join("");
+  var needs = [
+    { title: "Tìm lớp cho con", desc: "Bồi dưỡng văn hóa lớp 6–12, luyện thi, Cambridge trẻ em tại Điểm 10+ — 8 cơ sở TP.HCM.", color: "#E2231A", action: "Xem khóa học Điểm 10+", act: 'data-nav="/khoa-hoc?diem10"' },
+    { title: "Học ngoại ngữ cho tôi", desc: "Anh – Hoa – Nhật – Hàn tại DanhLingo: giao tiếp được sau 9 tiếng, 20% nỗ lực – 80% hiệu quả.", color: "#D61F26", action: "Xem khóa học DanhLingo", act: 'data-nav="/khoa-hoc?danhlingo"' },
+    { title: "Hợp tác cùng Bản Việt", desc: "Đối tác giáo dục & công nghệ: trao đổi chương trình, hạ tầng công nghệ, tổ chức thi & chứng chỉ.", color: "#1565D8", action: "Gửi nhu cầu hợp tác", act: 'data-consult="hop-tac|"' }
+  ].map(function(c){
+    return '<article class="need-card" style="border-top:3px solid ' + c.color + '"><h3>' + c.title + '</h3><p>' + c.desc + '</p><button type="button" class="btn-brand" style="border-color:' + c.color + ";color:" + c.color + '" ' + c.act + ">" + c.action + " →</button></article>";
+  }).join("");
+  var strengths = [
+    { title: "Chất lượng giảng dạy quốc tế", desc: "Chất lượng giảng dạy và dịch vụ đạt chuẩn quốc tế, được chứng nhận." },
+    { title: "Đội ngũ giáo viên chuyên môn cao", desc: "100% giáo viên có bằng giảng dạy Anh ngữ theo tiêu chuẩn quốc tế." },
+    { title: "Chương trình học đa dạng", desc: "Thiết kế riêng cho từng độ tuổi và nhu cầu — từ trẻ mẫu giáo đến người lớn bận rộn." },
+    { title: "Thời gian học thoải mái", desc: "Sắp xếp thời gian và lịch học nhanh chóng, phù hợp yêu cầu của phụ huynh và học sinh." }
+  ].map(function(s, i){
+    return '<article class="strength"><p class="no" style="margin:0">' + String(i + 1).padStart(2, "0") + '</p><div><h3>' + s.title + '</h3><p>' + s.desc + "</p></div></article>";
+  }).join("");
+  var partners = [
+    { name: "Cambridge", role: "Trao đổi chương trình đào tạo", desc: "Hợp tác về chương trình đào tạo và chứng chỉ tiếng Anh trẻ em chuẩn Cambridge: Starters, Movers, Flyers." },
+    { name: "FPT", role: "Hạ tầng công nghệ", desc: "Đồng hành về hạ tầng công nghệ phục vụ vận hành và phát triển hệ sinh thái giáo dục số." },
+    { name: "IIG", role: "Tổ chức thi, cấp chứng chỉ", desc: "Liên kết tổ chức thi và cấp chứng chỉ — hoàn thiện hành trình học và đánh giá cho học viên." }
+  ].map(function(p){
+    return '<article class="partner"><p class="pname">' + p.name + '</p><p class="prole">' + p.role + '</p><p class="desc">' + p.desc + "</p></article>";
+  }).join("");
+  var newsCards = NEWS.slice(0, 4).map(newsCardHTML).join("");
+  var finderOpts = FINDER_OPTIONS.map(function(o, i){
+    return '<option value="' + i + '"' + (i === 1 ? " selected" : "") + ">" + esc(o.label) + "</option>";
+  }).join("");
+  return "<main>" +
+    '<section style="background:#fff;border-bottom:1px solid var(--border)" aria-label="Giới thiệu Bản Việt"><div class="wrap section" style="padding-top:40px;padding-bottom:48px">' +
+      '<div class="intro intro-grid"><div>' +
+        '<p class="kicker">Hệ sinh thái giáo dục &amp; công nghệ</p>' +
+        "<h1>Bản Việt — Kiến tạo thế hệ học tập thông minh</h1>" +
+        '<span class="gold-rule"></span>' +
+        '<p class="lead">Từ IAC thành lập năm 2010, Bản Việt xây dựng hệ sinh thái 4 thương hiệu: bồi dưỡng văn hóa, ngoại ngữ, công nghệ và học trực tuyến — đồng hành cùng người học Việt ở mọi độ tuổi.</p>' +
+        '<div class="cta-row"><a class="btn" href="#/he-sinh-thai">Khám phá hệ sinh thái</a><button type="button" class="btn-outline" data-consult="">Đăng ký tư vấn</button></div>' +
+      "</div>" +
+      '<img class="photo" src="' + img("hero") + '" alt="Giáo viên hướng dẫn học sinh trong lớp học Bản Việt" />' +
+      "</div>" +
+      '<div class="finder"><div class="row"><label for="finder">Tìm khóa học theo độ tuổi và nhu cầu</label>' +
+        '<select id="finder" class="field-input">' + finderOpts + "</select>" +
+        '<button type="button" class="btn blue" id="finder-btn" style="flex-shrink:0;padding-top:10px;padding-bottom:10px">Tìm khóa học →</button>' +
+      "</div></div>" +
+    "</div></section>" +
+    '<section class="section" aria-label="Bản Việt qua những con số"><div class="wrap">' +
+      sectionTitleHTML("Bản Việt qua những con số", "Hơn 15 năm đồng hành cùng người học Việt") +
+      '<div style="margin-top:36px">' + numberedStatsHTML([
+        { value: "2010", label: "Năm khởi đầu", sub: "Tiền thân IAC — Giáo dục và Công nghệ Quốc tế Châu Á." },
+        { value: "4", label: "Thương hiệu trong hệ sinh thái", sub: "Điểm 10+ · DanhLingo · Aitechco · Schooli." },
+        { value: "8", label: "Cơ sở tại TP.HCM", sub: "Hệ thống Điểm 10+ phủ khắp các quận, cùng lớp online toàn quốc." },
+        { value: "100%", label: "Giáo viên Anh ngữ chuẩn quốc tế", sub: "100% giáo viên có bằng giảng dạy Anh ngữ theo tiêu chuẩn quốc tế." }
+      ], false) + "</div>" +
+    "</div></section>" +
+    '<section class="section white"><div class="wrap">' +
+      sectionTitleHTML("Bắt đầu tại đây", "Bạn đang tìm gì?", "Chọn đúng nhu cầu — Bản Việt dẫn bạn tới đúng thương hiệu và khóa học phù hợp nhất.") +
+      '<div class="grid g3" style="margin-top:32px">' + needs + "</div>" +
+    "</div></section>" +
+    '<section class="section"><div class="wrap">' +
+      sectionTitleHTML("Hệ sinh thái Bản Việt", "Bốn thương hiệu, một hệ sinh thái", "Trang mẹ Bản Việt là cửa ngõ: mỗi thương hiệu có trang chi tiết riêng tại đây và website vận hành độc lập.") +
+      '<div class="grid g4" style="margin-top:32px">' + brandCards + "</div>" +
+      '<div style="margin-top:28px"><a class="btn-outline" href="#/he-sinh-thai">Chi tiết các thương hiệu →</a></div>' +
+    "</div></section>" +
+    '<section class="section white"><div class="wrap">' +
+      sectionTitleHTML("Vì sao chọn Bản Việt", "Bốn điểm mạnh của hệ sinh thái") +
+      '<div class="grid g2" style="margin-top:32px;gap:32px">' + strengths + "</div>" +
+      '<p class="note-bar">Hệ thống Điểm 10+ có <strong>8 cơ sở tại TP.HCM</strong> (Gò Vấp, Bình Thạnh, Tân Bình, Tân Phú, Quận 7, Quận 3) — địa chỉ đầy đủ của từng cơ sở được liệt kê ở chân trang, kèm lớp học trực tuyến trên toàn quốc.</p>' +
+    "</div></section>" +
+    '<section class="section"><div class="wrap">' +
+      sectionTitleHTML("Đối tác liên kết", "Đồng hành cùng các tổ chức uy tín") +
+      '<div class="grid g3" style="margin-top:32px">' + partners + "</div>" +
+    "</div></section>" +
+    '<section class="section white"><div class="wrap">' +
+      sectionTitleHTML("Tin tức & hoạt động", "Tin mới từ hệ sinh thái Bản Việt") +
+      '<div class="grid g4" style="margin-top:32px">' + newsCards + "</div>" +
+      '<div style="margin-top:28px"><a class="btn-outline" href="#/tin-tuc">Đọc thêm tin tức →</a></div>' +
+    "</div></section>" +
+    '<section style="background:var(--navy);color:#fff" class="section"><div class="wrap"><div class="intro-grid" style="align-items:center">' +
+      "<div><h2 style=\"margin:0;font-size:30px;font-weight:800\">Đăng ký nhận tư vấn ngay</h2><span class=\"gold-rule\"></span>" +
+      '<p style="margin-top:16px;max-width:512px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.85)">Để lại thông tin — đội ngũ Bản Việt liên hệ lại và tư vấn đúng thương hiệu, đúng khóa học cho bạn và gia đình.</p>' +
+      '<ul style="list-style:none;margin:20px 0 0;padding:0;color:rgba(255,255,255,.85)"><li style="margin-top:10px">✓ Tư vấn miễn phí, đúng nhu cầu từng độ tuổi</li><li style="margin-top:10px">✓ Hotline và địa chỉ từng thương hiệu ở trang Liên hệ và cuối trang</li></ul></div>' +
+      '<div style="background:#fff;border-radius:8px;padding:4px;color:var(--ink);box-shadow:0 4px 16px rgba(0,0,0,.25)">' + consultFormHTML({ compact: true }) + "</div>" +
+    "</div></div></section>" +
+  "</main>";
+}
+
+/* ================= GIỚI THIỆU ================= */
+function aboutPage(){
+  var timeline = [
+    { year: "2010", title: "IAC — điểm khởi đầu", desc: "Tiền thân của Bản Việt là IAC (Giáo dục và Công nghệ Quốc tế Châu Á), thành lập năm 2010." },
+    { year: "Điểm 10+", title: "Bồi dưỡng văn hóa", desc: "Thương hiệu bồi dưỡng văn hóa lớp 6–12 và luyện thi hình thành, với triết lý không tư duy thay học viên và slogan HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT." },
+    { year: "DanhLingo", title: "Ngoại ngữ đa ngôn ngữ", desc: "DanhLingo phát triển mảng ngoại ngữ Anh – Hoa – Nhật – Hàn với triết lý “khác biệt vì hiểu thứ bạn cần”, giao tiếp là trọng tâm." },
+    { year: "Aitechco · Schooli", title: "Công nghệ & trực tuyến", desc: "Aitechco phụ trách công nghệ, Schooli đưa lớp học trực tuyến tới học viên toàn quốc và du học sinh." },
+    { year: "Hôm nay", title: "Hệ sinh thái Bản Việt", desc: "Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt vận hành hệ sinh thái 4 thương hiệu — kiến tạo thế hệ học tập thông minh." }
+  ].map(function(t){
+    return '<li><span class="dot" aria-hidden="true"></span><p class="yr">' + esc(t.year) + "</p><h3>" + esc(t.title) + '</h3><p class="desc">' + esc(t.desc) + "</p></li>";
+  }).join("");
+  var minis = [
+    { n: "01", title: "Chất lượng giảng dạy quốc tế", desc: "Chất lượng giảng dạy và dịch vụ đạt chuẩn quốc tế." },
+    { n: "02", title: "Giáo viên chuyên môn cao", desc: "100% giáo viên có bằng giảng dạy Anh ngữ theo tiêu chuẩn quốc tế." },
+    { n: "03", title: "Chương trình đa dạng", desc: "Thiết kế riêng cho từng độ tuổi và nhu cầu, từ mẫu giáo đến người lớn." },
+    { n: "04", title: "Thời gian học thoải mái", desc: "Lịch học sắp xếp nhanh chóng, phù hợp yêu cầu phụ huynh và học sinh." }
+  ].map(function(s){
+    return '<article class="mini-card"><p class="no">' + s.n + "</p><h3>" + s.title + "</h3><p>" + s.desc + "</p></article>";
+  }).join("");
+  return "<main>" +
+    breadcrumbHTML([{ label: "Giới thiệu" }]) +
+    pageHeroHTML("Giới thiệu Bản Việt", "Công ty TNHH Đầu tư Giáo dục và Công nghệ Bản Việt — tiền thân là IAC, thành lập năm 2010 — hoạt động trong lĩnh vực giáo dục: các môn văn hóa tự nhiên và tiếng Anh, cùng công nghệ giáo dục.") +
+    '<section class="section"><div class="wrap">' +
+      '<nav class="toc" aria-label="Mục lục trang giới thiệu"><p>Nội dung trang này</p><ul>' +
+        '<li><button type="button" data-scroll="gioi-thieu-gia-tri">1. Giá trị Bản Việt</button></li>' +
+        '<li><button type="button" data-scroll="gioi-thieu-hanh-trinh">2. Hành trình phát triển</button></li>' +
+        '<li><button type="button" data-scroll="gioi-thieu-diem-manh">3. Bốn điểm mạnh</button></li>' +
+      "</ul></nav>" +
+      '<div id="gioi-thieu-gia-tri" class="detail-grid" style="scroll-margin-top:96px">' +
+        '<img class="photo" src="' + img("hero") + '" alt="Giáo viên và học sinh trong lớp học của hệ sinh thái Bản Việt" />' +
+        "<div><h2 style=\"margin:0;font-size:30px;font-weight:800\">Giá trị Bản Việt — Giáo dục và Đào tạo</h2>" +
+        '<p style="margin-top:16px;line-height:1.7">Hệ thống chương trình Trẻ em, Thiếu nhi, Thiếu niên được thiết kế theo chương trình đào tạo chuẩn quốc tế: Thực hành cuộc sống, Giác quan, Toán học, Ngôn ngữ, Khoa học, Nghệ thuật, Âm nhạc… khai thác tối đa tiềm năng sẵn có của trẻ. Trẻ được phát triển toàn diện tất cả các giác quan, tư duy và ngôn ngữ.</p>' +
+        '<p style="margin-top:12px;line-height:1.7">Các khóa học Người lớn được thiết kế chuyên biệt, khoa học, sinh động, giúp người học dễ dàng cảm thụ và sử dụng ngoại ngữ dễ dàng.</p>' +
+        '<div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="#/he-sinh-thai">Khám phá hệ sinh thái</a><button type="button" class="btn-outline" data-scroll-footer>Xem địa chỉ các cơ sở ↓</button></div></div>' +
+      "</div>" +
+      '<div id="gioi-thieu-hanh-trinh" style="margin-top:56px;scroll-margin-top:96px">' +
+        sectionTitleHTML("Hành trình phát triển", "Từ 2010 đến hệ sinh thái hôm nay") +
+        '<ol class="timeline">' + timeline + "</ol>" +
+      "</div>" +
+      '<div id="gioi-thieu-diem-manh" class="grid g4" style="margin-top:56px;scroll-margin-top:96px">' + minis + "</div>" +
+    "</div></section>" +
+  "</main>";
+}
+
+/* ================= HỆ SINH THÁI (tổng) ================= */
+function ecosystemPage(){
+  var big = BRANDS.slice(0, 2).map(function(b){ return brandCardHTML(b, true); }).join("");
+  var small = BRANDS.slice(2).map(function(b){ return brandCardHTML(b, false); }).join("");
+  var rows = BRANDS.map(function(b, i){
+    return '<li style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 20px;padding:16px 0;border-bottom:1px solid var(--border)">' +
+      '<span style="font-size:20px;font-weight:900;color:var(--blue)">' + String(i + 1).padStart(2, "0") + "</span>" +
+      '<span style="min-width:176px;font-weight:800;color:var(--navy)">' + esc(b.field) + "</span>" +
+      '<a href="#/thuong-hieu/' + b.slug + '" style="font-weight:700;text-decoration:none;color:' + b.color + '">' + esc(b.name) + "</a>" +
+      '<span style="font-size:15px;color:var(--slate)">' + esc(b.tagline) + "</span></li>";
+  }).join("");
+  return "<main>" +
+    breadcrumbHTML([{ label: "Hệ sinh thái" }]) +
+    pageHeroHTML("Hệ sinh thái Bản Việt", "Bốn thương hiệu — bốn lĩnh vực: bồi dưỡng văn hóa, ngoại ngữ, công nghệ và học trực tuyến. Mỗi thương hiệu có trang chi tiết riêng và website vận hành độc lập.") +
+    '<section class="section"><div class="wrap">' +
+      '<div class="grid g2">' + big + "</div>" +
+      '<div class="grid g2" style="margin-top:24px">' + small + "</div>" +
+      '<div class="panel" style="margin-top:48px"><h2>Bốn lĩnh vực — mỗi lĩnh vực một thương hiệu</h2><ol style="list-style:none;margin:8px 0 0;padding:0">' + rows + "</ol></div>" +
+    "</div></section>" +
+  "</main>";
+}
+
+/* ================= CHI TIẾT THƯƠNG HIỆU ================= */
+function brandDetailPage(b){
+  var st = BRAND_STYLE[b.slug] || { primary: b.color, secondary: b.color, headerBg: b.color };
+  var courses = COURSES.filter(function(c){ return c.brandSlug === b.slug; });
+  var bullets = b.bullets.map(function(x){
+    return '<li><span aria-hidden="true" style="color:' + b.color + '">✓</span><span style="font-weight:500">' + esc(x) + "</span></li>";
+  }).join("");
+  var info = "";
+  if (b.address || b.email) {
+    info = '<div class="info-box">' +
+      (b.address ? "<p style=\"margin:0\"><strong>Địa chỉ:</strong> " + esc(b.address) + "</p>" : "") +
+      (b.email ? '<p style="margin:4px 0 0"><strong>Email:</strong> <a href="mailto:' + esc(b.email) + '">' + esc(b.email) + "</a></p>" : "") +
+    "</div>";
+  }
+  var extra = "";
+  if (b.slug === "danhlingo") {
+    extra = '<div class="panel" style="margin-top:48px"><h2>DanhLingo qua những con số</h2><div style="margin-top:28px">' +
+      numberedStatsHTML([
+        { value: "9 tiếng", label: "Học là giao tiếp được", sub: "Chỉ sau 9 tiếng học, bạn đã có thể tự giới thiệu bản thân và có phát âm chuẩn." },
+        { value: "20% – 80%", label: "Nỗ lực ít, hiệu quả cao", sub: "Phương pháp DanhLingo: chỉ mất 20% nỗ lực nhưng đạt 80% hiệu quả học tập." },
+        { value: "4", label: "Ngôn ngữ đào tạo", sub: "Anh – Hoa – Nhật – Hàn trong cùng một hệ thống DanhLingo." }
+      ], true) + "</div></div>";
+  }
+  if (b.slug === "diem10") {
+    extra = '<div class="slogan-band" style="background:#E2231A;border-bottom:4px solid #F2C200"><p class="big" style="color:#F2C200">HỌC THẬT – THI THẬT – ĐIỂM SỐ THẬT</p><p class="sub">Không tư duy thay học viên — giúp học viên làm chủ tư duy trong môi trường “Mở – Thân thiện – Hiệu quả”, với phương pháp “Hướng mục tiêu, cá nhân hóa”.</p></div>';
+  }
+  var courseList = "";
+  if (courses.length) {
+    courseList = '<div style="margin-top:48px"><h2 style="margin:0;font-size:24px;font-weight:800;color:var(--navy)">Khóa học của ' + esc(b.name) + '</h2><ul class="grid g2" style="list-style:none;margin:20px 0 0;padding:0">' +
+      courses.map(function(c){
+        return '<li class="card" style="border-radius:8px"><div class="body">' +
+          '<a class="title-link" href="#/khoa-hoc-chi-tiet/' + c.slug + '">' + esc(c.title) + "</a>" +
+          '<p class="meta" style="margin-top:4px">' + esc(c.ageGroup) + " · " + esc(c.format) + "</p>" +
+          '<p class="excerpt">' + esc(c.summary) + "</p>" +
+          '<div class="actions"><a class="btn-brand-solid" style="background:' + b.color + '" href="#/khoa-hoc-chi-tiet/' + c.slug + '">Chi tiết</a>' +
+          '<button type="button" class="btn btn-sm" data-consult="' + b.slug + "|" + c.slug + '">Đăng ký tư vấn</button></div>' +
+        "</div></li>";
+      }).join("") + "</ul></div>";
+  }
+  return "<main>" +
+    breadcrumbHTML([{ label: "Hệ sinh thái", hash: "#/he-sinh-thai" }, { label: b.name }]) +
+    '<div class="brand-hero" style="background:' + st.headerBg + ';margin-top:16px"><div class="wrap"><div class="inner">' +
+      brandLogoHeaderHTML(b) +
+      '<p class="fieldline">' + esc(b.field) + " · Hệ sinh thái Bản Việt</p>" +
+      "<h1>" + esc(b.name) + "</h1>" +
+      '<p class="tagline"' + (b.slug === "danhlingo" ? ' style="color:#FCB900"' : "") + ">" + esc(b.tagline) + "</p>" +
+      '<div class="cta-row"><button type="button" style="background:#fff;color:' + b.color + ';border:0;border-radius:6px;padding:12px 20px;font-weight:700;font-size:16px;cursor:pointer;font-family:inherit;box-shadow:0 1px 4px rgba(0,0,0,.2)" data-consult="' + b.slug + '|">Đăng ký tư vấn ' + esc(b.name) + '</button>' +
+      '<a class="btn-outline on-dark" href="' + b.website + '" target="_blank" rel="noreferrer">Truy cập ' + b.website.replace("https://", "") + " ↗</a></div>" +
+    "</div></div></div>" +
+    '<section class="section" style="padding-top:40px"><div class="wrap">' +
+      backBtn("/he-sinh-thai", "Quay lại Hệ sinh thái") +
+      '<div class="detail-grid" style="margin-top:32px">' +
+        '<img class="photo" src="' + img(b.imageKey) + '" alt="' + esc(b.name) + " — " + esc(b.tagline) + '" />' +
+        "<div><h2 style=\"margin:0;font-size:30px;font-weight:800\">Giới thiệu " + esc(b.name) + "</h2>" +
+        '<p style="margin-top:16px;line-height:1.7">' + esc(b.description) + "</p>" +
+        '<ul class="check-list">' + bullets + "</ul>" + info + "</div>" +
+      "</div>" +
+      extra + courseList +
+    "</div></section>" +
+  "</main>";
+}
+
+/* ================= KHÓA HỌC ================= */
+var courseState = { brand: "all", audience: "all" };
+var AUDIENCE_FILTERS = [
+  { v: "all", l: "Mọi đối tượng" },
+  { v: "tien-tieu-hoc", l: "Chuẩn bị vào lớp 1" },
+  { v: "lop-6-12", l: "Học sinh lớp 6–12" },
+  { v: "luyen-thi", l: "Luyện thi" },
+  { v: "cambridge", l: "Cambridge trẻ em" },
+  { v: "nguoi-lon", l: "Người lớn học ngoại ngữ" },
+  { v: "online", l: "Học online" }
+];
+function matchAudience(c){
+  switch (courseState.audience) {
+    case "tien-tieu-hoc": return c.slug === "tien-tieu-hoc";
+    case "lop-6-12": return c.slug === "bo-duong-6-12";
+    case "luyen-thi": return c.slug === "luyen-thi";
+    case "cambridge": return c.slug === "cambridge-tre-em";
+    case "nguoi-lon": return c.brandSlug === "danhlingo";
+    case "online": return c.format.toLowerCase().indexOf("online") >= 0 || c.brandSlug === "schooli";
+    default: return true;
+  }
+}
+function coursesPage(){
+  var brandChips = ['<button type="button" class="chip' + (courseState.brand === "all" ? " on" : "") + '" data-cbrand="all" aria-pressed="' + (courseState.brand === "all") + '">Tất cả thương hiệu</button>']
+    .concat(BRANDS.map(function(b){
+      return '<button type="button" class="chip' + (courseState.brand === b.slug ? " on" : "") + '" data-cbrand="' + b.slug + '" aria-pressed="' + (courseState.brand === b.slug) + '">' + esc(b.name) + "</button>";
+    })).join("");
+  var audChips = AUDIENCE_FILTERS.map(function(o){
+    return '<button type="button" class="chip' + (courseState.audience === o.v ? " on" : "") + '" data-caud="' + o.v + '" aria-pressed="' + (courseState.audience === o.v) + '">' + o.l + "</button>";
+  }).join("");
+  var filtered = COURSES.filter(function(c){ return (courseState.brand === "all" || c.brandSlug === courseState.brand) && matchAudience(c); });
+  var list = filtered.length === 0
+    ? '<div class="empty-box"><h3>Chưa có khóa học khớp bộ lọc này</h3><p>Thử bỏ bớt điều kiện lọc, hoặc để lại thông tin để được tư vấn trực tiếp.</p><button type="button" class="btn" style="margin-top:20px" data-consult="">Đăng ký tư vấn miễn phí</button></div>'
+    : '<div class="grid g3" style="margin-top:16px">' + filtered.map(courseCardHTML).join("") + "</div>";
+  return "<main>" +
+    breadcrumbHTML([{ label: "Khóa học" }]) +
+    pageHeroHTML("Khóa học của hệ sinh thái Bản Việt", "Toàn bộ khóa học của hệ sinh thái Bản Việt — lọc theo thương hiệu hoặc theo đối tượng để tìm đúng khóa cho bạn.") +
+    '<section class="section" style="padding-top:40px"><div class="wrap">' +
+      '<div class="filter-box"><p class="fl">Lọc theo thương hiệu</p><div class="chip-row" role="group" aria-label="Lọc theo thương hiệu">' + brandChips + "</div>" +
+      '<p class="fl" style="margin-top:20px">Lọc theo đối tượng / nhu cầu</p><div class="chip-row" role="group" aria-label="Lọc theo đối tượng">' + audChips + "</div></div>" +
+      '<p class="count-line" role="status">Tìm thấy ' + filtered.length + " khóa học</p>" + list +
+    "</div></section>" +
+  "</main>";
+}
+
+/* ================= CHI TIẾT KHÓA HỌC ================= */
+function courseDetailPage(c){
+  var b = brandOf(c.brandSlug);
+  var color = b ? b.color : "#1565D8";
+  var crumbs = [{ label: "Khóa học", hash: "#/khoa-hoc" }];
+  if (b) crumbs.push({ label: b.name, hash: "#/thuong-hieu/" + b.slug });
+  crumbs.push({ label: c.title });
+  var related = COURSES.filter(function(x){ return x.brandSlug === c.brandSlug && x.slug !== c.slug; }).slice(0, 3);
+  var rel = related.length ? '<div style="margin-top:56px">' + sectionTitleHTML("", "Khóa học khác của " + (b ? b.name : "")) +
+    '<div class="grid g3" style="margin-top:32px">' + related.map(courseCardHTML).join("") + "</div></div>" : "";
+  return "<main>" +
+    breadcrumbHTML(crumbs) +
+    '<section class="section" style="padding-top:32px"><div class="wrap">' +
+      backBtn("/khoa-hoc", "Quay lại danh sách khóa học") +
+      '<div class="detail-grid" style="margin-top:28px">' +
+        '<img class="photo" src="' + img(c.imageKey) + '" alt="' + esc(c.title) + '" />' +
+        "<div>" +
+          (b ? '<a href="#/thuong-hieu/' + b.slug + '" style="display:inline-block;border-radius:4px;padding:6px 14px;font-size:14px;font-weight:700;color:#fff;text-decoration:none;background:' + color + '">' + esc(b.name) + " — " + esc(b.field) + "</a>" : "") +
+          '<h1 style="margin:16px 0 0;font-size:30px;font-weight:800;line-height:1.3">' + esc(c.title) + "</h1>" +
+          '<dl class="spec-box"><div><dt>Đối tượng</dt><dd>' + esc(c.audience) + '</dd></div><div><dt>Độ tuổi / Lớp</dt><dd>' + esc(c.ageGroup) + '</dd></div><div><dt>Hình thức</dt><dd>' + esc(c.format) + "</dd></div></dl>" +
+          '<p style="margin-top:20px;line-height:1.7">' + esc(c.details) + "</p>" +
+          '<div style="margin-top:28px"><button type="button" class="btn" style="padding:14px 24px" data-consult="' + c.brandSlug + "|" + c.slug + '">Đăng ký tư vấn khóa này</button></div>' +
+        "</div>" +
+      "</div>" + rel +
+    "</div></section>" +
+  "</main>";
+}
+
+/* ================= TIN TỨC ================= */
+var newsState = { category: "all" };
+function newsCategories(){
+  var cats = [];
+  NEWS.forEach(function(n){ if (cats.indexOf(n.category) < 0) cats.push(n.category); });
+  return cats;
+}
+function catBtn(cat, label){
+  var on = newsState.category === cat;
+  return '<button type="button" class="chip' + (on ? " on" : "") + '" data-ncat="' + esc(cat) + '" aria-pressed="' + on + '">' + esc(label) + "</button>";
+}
+function newsListPage(){
+  var cats = newsCategories();
+  var filtered = newsState.category === "all" ? NEWS : NEWS.filter(function(n){ return n.category === newsState.category; });
+  var mobileCats = '<div class="mobile-cats"><div class="chip-row" style="margin-top:0" role="group" aria-label="Lọc tin theo chuyên mục">' +
+    catBtn("all", "Tất cả") + cats.map(function(c){ return catBtn(c, c); }).join("") + "</div></div>";
+  var sideCats = '<div class="cat-list" role="group" aria-label="Lọc tin theo chuyên mục">' +
+    catBtn("all", "Tất cả bài viết") + cats.map(function(c){ return catBtn(c, c); }).join("") + "</div>";
+  var latest = NEWS.slice(0, 4).map(function(n){
+    return '<li><a href="#/bai-viet/' + n.slug + '">' + esc(n.title) + '</a><p>' + esc(n.category) + " · " + fmtDate(n.date) + "</p></li>";
+  }).join("");
+  var cards = filtered.length ? '<div class="grid g2" style="margin-top:16px">' + filtered.map(newsCardHTML).join("") + "</div>"
+    : '<p style="margin-top:32px;text-align:center;font-weight:600;color:var(--slate)">Chưa có bài viết trong chuyên mục này.</p>';
+  return "<main>" +
+    breadcrumbHTML([{ label: "Tin tức" }]) +
+    pageHeroHTML("Tin tức & hoạt động", "Hoạt động mới nhất từ Bản Việt, Điểm 10+ và các thương hiệu trong hệ sinh thái.") +
+    '<section class="section" style="padding-top:40px"><div class="wrap">' + mobileCats +
+      '<div class="news-layout"><div>' +
+        '<p class="count-line" style="margin-top:0" role="status">' + (newsState.category === "all" ? "Tất cả bài viết (" + filtered.length + ")" : esc(newsState.category) + " (" + filtered.length + " bài)") + "</p>" + cards +
+      "</div>" +
+      '<aside class="side-stack">' +
+        '<div class="side-box desktop-only"><h2>Chuyên mục</h2>' + sideCats + "</div>" +
+        '<div class="side-box"><h2>Bài mới nhất</h2><ul>' + latest + "</ul></div>" +
+        '<div class="side-cta"><h2>Đăng ký tư vấn miễn phí</h2><p>Đội ngũ Bản Việt tư vấn đúng thương hiệu và khóa học cho bạn và gia đình.</p><button type="button" class="btn-outline on-dark" style="margin-top:16px;width:100%" data-consult="">Tới form tư vấn →</button></div>' +
+      "</aside></div>" +
+    "</div></section>" +
+  "</main>";
+}
+function newsArticlePage(item){
+  if (!item) {
+    return '<main><div class="wrap notfound"><h1 style="font-size:24px;font-weight:800;color:var(--navy)">Không tìm thấy bài viết</h1><p style="margin-top:12px;color:var(--slate)">Bài viết có thể đã được di chuyển. Quay lại danh sách tin tức để xem các bài mới nhất.</p><div style="margin-top:24px">' + backBtn("/tin-tuc", "Quay lại Tin tức") + "</div></div></main>";
+  }
+  var others = NEWS.filter(function(n){ return n.slug !== item.slug; }).slice(0, 4).map(function(n){
+    return '<li><a href="#/bai-viet/' + n.slug + '">' + esc(n.title) + '</a><p>' + esc(n.category) + " · " + fmtDate(n.date) + "</p></li>";
+  }).join("");
+  var paras = item.body.split("\n\n").map(function(p){ return '<p class="para">' + esc(p) + "</p>"; }).join("");
+  return "<main>" +
+    breadcrumbHTML([{ label: "Tin tức", hash: "#/tin-tuc" }, { label: item.title }]) +
+    '<div class="wrap" style="padding-top:32px;padding-bottom:48px"><div class="news-layout">' +
+      '<article class="post" style="max-width:768px">' +
+        backBtn("/tin-tuc", "Quay lại Tin tức") +
+        '<p class="meta" style="margin-top:28px"><span class="badge">' + esc(item.category) + "</span>" + fmtDate(item.date) + "</p>" +
+        "<h1>" + esc(item.title) + "</h1>" +
+        '<img class="hero" src="' + img(item.imageKey) + '" alt="' + esc(item.title) + '" />' +
+        '<p class="excerpt">' + esc(item.excerpt) + "</p>" + paras +
+        '<div class="post-cta"><p>Quan tâm tới các chương trình của Bản Việt?</p><button type="button" class="btn-outline" style="margin-top:14px" data-consult="">Đăng ký tư vấn miễn phí</button></div>' +
+      "</article>" +
+      '<aside class="side-stack">' +
+        '<div class="side-box"><h2>Bài viết khác</h2><ul>' + others + '</ul><a class="btn-outline btn-sm" style="margin-top:20px" href="#/tin-tuc">Xem tất cả tin tức →</a></div>' +
+        '<div class="side-cta"><h2>Hệ sinh thái Bản Việt</h2><p>Điểm 10+ · DanhLingo · Aitechco · Schooli — bốn thương hiệu, một mục tiêu học tập.</p><a class="btn-outline on-dark" style="margin-top:16px;width:100%" href="#/he-sinh-thai">Khám phá hệ sinh thái →</a></div>' +
+      "</aside>" +
+    "</div></div>" +
+  "</main>";
+}
+
+/* ================= LIÊN HỆ ================= */
+function contactPage(query){
+  var brandLinks = BRANDS.map(function(b){
+    var logo = BRAND_LOGOS[b.slug];
+    var chip = logo ? '<span class="logo-chip" style="' + (b.slug === "danhlingo" ? "background:#D61F26;border-color:#D61F26" : "") + '"><img src="' + logo + '" alt="Logo ' + esc(b.name) + '" loading="lazy" /></span>'
+      : '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + b.color + '" aria-hidden="true"></span>';
+    return '<li style="list-style:none"><a class="brand-link" href="#/thuong-hieu/' + b.slug + '"><span class="left">' + chip + esc(b.name) + '</span><span class="tag">' + esc(b.tagline) + " →</span></a></li>";
+  }).join("");
+  var preBrand = query.get("brand") || "diem10";
+  var preCourse = query.get("course") || "";
+  return "<main>" +
+    breadcrumbHTML([{ label: "Liên hệ" }]) +
+    pageHeroHTML("Liên hệ & Đăng ký tư vấn", "Điền form bên dưới — đăng ký được ghi nhận ngay và đội ngũ đúng thương hiệu sẽ liên hệ lại với bạn.") +
+    '<section class="section" style="padding-top:40px"><div class="wrap"><div class="contact-grid">' +
+      '<div class="stack">' +
+        '<div class="contact-card"><h2>Thông tin liên hệ</h2>' +
+          '<p style="margin-top:12px;font-weight:600">CÔNG TY TNHH ĐẦU TƯ GIÁO DỤC VÀ CÔNG NGHỆ BẢN VIỆT</p>' +
+          "<ul>" +
+            '<li><strong style="color:var(--ink)">Điểm 10+</strong> — Hotline <a href="' + telHref("0933 39 87 87") + '">0933 39 87 87</a>, ĐT <a href="' + telHref("028 3895 6006") + '">028 3895 6006</a><br />8 cơ sở tại TP.HCM — địa chỉ đầy đủ của từng cơ sở được liệt kê ở cuối trang này.</li>' +
+            '<li><strong style="color:var(--ink)">DanhLingo</strong> — Hotline <a href="' + telHref("089 992 8787") + '">089 992 8787</a>, email <a href="mailto:danhlingo@gmail.com">danhlingo@gmail.com</a><br />386/52Bis Lê Văn Sỹ, P. Nhiêu Lộc, TP.HCM (P.14, Q.3)</li>' +
+            '<li><strong style="color:var(--ink)">Aitechco</strong> — <a href="https://aitechco.vn" target="_blank" rel="noreferrer">aitechco.vn ↗</a></li>' +
+            '<li><strong style="color:var(--ink)">Schooli</strong> — <a href="https://schooli.edu.vn" target="_blank" rel="noreferrer">schooli.edu.vn ↗</a></li>' +
+          "</ul></div>" +
+        '<div class="zalo-card"><h2>Chat nhanh qua Zalo</h2><p>Nhắn Zalo tới hotline Điểm 10+ để được tư vấn ngay trong giờ làm việc.</p><a class="zalo-btn" href="https://zalo.me/0933398787" target="_blank" rel="noreferrer">Mở Zalo 0933 39 87 87 ↗</a></div>' +
+        '<ul style="list-style:none;margin:0;padding:0" class="stack">' + brandLinks + "</ul>" +
+      "</div>" +
+      "<div>" + consultFormHTML({ brand: preBrand, course: preCourse }) + "</div>" +
+    "</div></div></section>" +
+  "</main>";
+}
+
+/* ================= QUẢN TRỊ (demo — dữ liệu tại trình duyệt) ================= */
+var adminState = { search: "", brand: "", status: "" };
+function hbarHTML(data, unit){
+  var max = 1;
+  data.forEach(function(d){ if (d.value > max) max = d.value; });
+  return '<ul class="hbar">' + data.map(function(d){
+    return '<li><span class="lb">' + esc(d.label) + '</span><span class="track"><span class="fill" style="width:' + (d.value / max * 100) + "%;background:" + (d.color || "var(--blue)") + '"></span></span><span class="vl">' + d.value + " " + unit + "</span></li>";
+  }).join("") + "</ul>";
+}
+function statusSelectHTML(r, idSuffix){
+  return '<select class="status ' + r.status + '" data-status-for="' + r.id + '" id="st-' + idSuffix + "-" + r.id + '" aria-label="Trạng thái đăng ký của ' + esc(r.fullName) + '">' +
+    '<option value="new"' + (r.status === "new" ? " selected" : "") + ">Mới</option>" +
+    '<option value="contacted"' + (r.status === "contacted" ? " selected" : "") + ">Đã liên hệ</option>" +
+    '<option value="done"' + (r.status === "done" ? " selected" : "") + ">Đã tư vấn xong</option></select>";
+}
+function adminPage(){
+  var all = loadRegs();
+  var byStatus = { new: 0, contacted: 0, done: 0 };
+  var brandCount = {}, timeCount = {};
+  all.forEach(function(r){
+    if (byStatus[r.status] !== undefined) byStatus[r.status] += 1;
+    brandCount[r.brandSlug] = (brandCount[r.brandSlug] || 0) + 1;
+    if (r.studyTime) timeCount[r.studyTime] = (timeCount[r.studyTime] || 0) + 1;
+  });
+  var byBrandData = Object.keys(brandCount).map(function(k){ return { label: brandName(k), value: brandCount[k], color: brandColor(k) }; });
+  var byStatusData = [
+    { label: "Mới", value: byStatus.new, color: "#FFB703" },
+    { label: "Đã liên hệ", value: byStatus.contacted, color: "#1565D8" },
+    { label: "Đã tư vấn xong", value: byStatus.done, color: "#1E9E5A" }
+  ].filter(function(d){ return d.value > 0; });
+  var timeLine = Object.keys(timeCount).map(function(k){ return k + " — " + timeCount[k]; }).join(" · ");
+  var q = adminState.search.trim().toLowerCase();
+  var regs = all.filter(function(r){
+    if (q && (r.fullName.toLowerCase().indexOf(q) < 0 && r.phone.replace(/[\s.]/g, "").indexOf(q.replace(/[\s.]/g, "")) < 0)) return false;
+    if (adminState.brand && r.brandSlug !== adminState.brand) return false;
+    if (adminState.status && r.status !== adminState.status) return false;
+    return true;
+  });
+  var brandOpts = '<option value="">Tất cả thương hiệu</option>' + BRANDS.map(function(b){
+    return '<option value="' + b.slug + '"' + (adminState.brand === b.slug ? " selected" : "") + ">" + esc(b.name) + "</option>";
+  }).join("") + '<option value="hop-tac"' + (adminState.brand === "hop-tac" ? " selected" : "") + ">Hợp tác</option>";
+  var statusOpts = '<option value="">Tất cả trạng thái</option>' +
+    '<option value="new"' + (adminState.status === "new" ? " selected" : "") + ">Mới</option>" +
+    '<option value="contacted"' + (adminState.status === "contacted" ? " selected" : "") + ">Đã liên hệ</option>" +
+    '<option value="done"' + (adminState.status === "done" ? " selected" : "") + ">Đã tư vấn xong</option>";
+  var listHTML;
+  if (regs.length === 0) {
+    listHTML = '<div class="empty-box"><h3>Chưa có đăng ký nào khớp bộ lọc</h3><p>Hãy gửi thử một đăng ký ở trang Liên hệ — nó sẽ xuất hiện ngay tại đây.</p><a class="btn" style="margin-top:20px" href="#/lien-he">Tới form đăng ký tư vấn</a></div>';
+  } else {
+    var cards = regs.map(function(r){
+      var c = r.courseSlug ? courseOf(r.courseSlug) : null;
+      var cp = r.campusId ? campusOf(r.campusId) : null;
+      var rows = '<div class="row"><dt>Thương hiệu: </dt><dd>' + esc(brandName(r.brandSlug)) + "</dd></div>" +
+        (c ? '<div class="row"><dt>Khóa học: </dt><dd>' + esc(c.title) + "</dd></div>" : "") +
+        (cp ? '<div class="row"><dt>Cơ sở: </dt><dd>' + esc(cp.name) + "</dd></div>" : "") +
+        (r.studyTime ? '<div class="row"><dt>Thời gian học: </dt><dd>' + esc(r.studyTime) + "</dd></div>" : "") +
+        (r.email ? '<div class="row"><dt>Email: </dt><dd>' + esc(r.email) + "</dd></div>" : "") +
+        (r.note ? '<div class="row"><dt>Ghi chú: </dt><dd>' + esc(r.note) + "</dd></div>" : "") +
+        '<div class="row"><dt>Gửi lúc: </dt><dd>' + fmtDateTime(r.createdAt) + "</dd></div>";
+      return '<li><div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px"><div><p style="margin:0;font-size:18px;font-weight:800;color:var(--navy)">' + esc(r.fullName) + '</p><a href="' + telHref(r.phone) + '" style="font-weight:700;color:var(--blue);text-decoration:none">' + esc(r.phone) + '</a></div><span class="status ' + r.status + '">' + (STATUS_LABEL[r.status] || r.status) + '</span></div><dl>' + rows + '</dl><label class="flabel" style="margin-top:16px" for="st-m-' + r.id + '">Đổi trạng thái</label>' + statusSelectHTML(r, "m") + "</li>";
+    }).join("");
+    var trs = regs.map(function(r){
+      var c = r.courseSlug ? courseOf(r.courseSlug) : null;
+      var cp = r.campusId ? campusOf(r.campusId) : null;
+      return "<tr><td><p style=\"margin:0;font-weight:700;color:var(--navy)\">" + esc(r.fullName) + '</p><a href="' + telHref(r.phone) + '" style="font-weight:600;color:var(--blue);text-decoration:none">' + esc(r.phone) + "</a>" + (r.email ? '<p style="margin:0;font-size:14px;color:var(--slate)">' + esc(r.email) + "</p>" : "") + "</td>" +
+        '<td><p style="margin:0;font-weight:600;color:' + brandColor(r.brandSlug) + '">' + esc(brandName(r.brandSlug)) + "</p>" + (c ? '<p style="margin:0;font-size:14px;color:var(--slate)">' + esc(c.title) + "</p>" : "") + "</td>" +
+        '<td style="color:var(--slate)">' + (cp ? "<p style=\"margin:0\">Cơ sở: " + esc(cp.name) + "</p>" : "") + (r.studyTime ? "<p style=\"margin:0\">Học: " + esc(r.studyTime) + "</p>" : "") + (r.note ? '<p style="margin:0;max-width:224px">“' + esc(r.note) + "”</p>" : "") + "</td>" +
+        '<td style="white-space:nowrap;color:var(--slate)">' + fmtDateTime(r.createdAt) + "</td>" +
+        "<td>" + statusSelectHTML(r, "d") + "</td></tr>";
+    }).join("");
+    listHTML = '<ul class="reg-cards">' + cards + "</ul>" +
+      '<div class="admin-table-wrap"><table class="admin"><thead><tr><th>Học viên</th><th>Nhu cầu</th><th>Chi tiết</th><th>Thời gian gửi</th><th>Trạng thái</th></tr></thead><tbody>' + trs + "</tbody></table></div>";
+  }
+  return "<main><div class=\"wrap\" style=\"padding-top:32px;padding-bottom:48px\">" +
+    '<div class="admin-hero"><span class="demo-tag">Trang quản trị — chỉ dùng trong demo</span><h1>Quản trị đăng ký tư vấn</h1>' +
+    "<p>Danh sách đăng ký tư vấn của website. Tìm kiếm, lọc và cập nhật trạng thái xử lý cho từng lượt đăng ký.</p></div>" +
+    '<div class="local-note" role="note"><strong>Lưu ý về bản HTML xuất tĩnh:</strong> các đăng ký gửi từ form được lưu ngay tại trình duyệt này (localStorage) để bạn xem và xử lý trong bản demo. Khi triển khai website chạy thật, phần đăng ký cần được nối với backend/cơ sở dữ liệu của Bản Việt để đội ngũ tư vấn nhận dữ liệu trên hệ thống chung.</div>' +
+    '<section class="grid g3" style="margin-top:32px" aria-label="Thống kê đăng ký">' +
+      '<div class="stat-card"><p class="cap">Tổng đăng ký</p><p class="big">' + all.length + '</p><p style="margin-top:8px;font-size:15px;color:var(--slate)">Mới: ' + byStatus.new + " · Đã liên hệ: " + byStatus.contacted + " · Đã tư vấn xong: " + byStatus.done + "</p></div>" +
+      '<div class="stat-card"><h2>Đăng ký theo thương hiệu</h2>' + (byBrandData.length ? hbarHTML(byBrandData, "lead") : '<p style="margin-top:16px;font-size:15px;color:var(--slate)">Chưa có đăng ký nào.</p>') + "</div>" +
+      '<div class="stat-card"><h2>Đăng ký theo trạng thái</h2>' + (byStatusData.length ? hbarHTML(byStatusData, "lead") : '<p style="margin-top:16px;font-size:15px;color:var(--slate)">Chưa có đăng ký nào.</p>') + (timeLine ? '<p style="margin-top:16px;font-size:14px;color:var(--slate)">Thời gian học: ' + esc(timeLine) + "</p>" : "") + "</div>" +
+    "</section>" +
+    '<section class="filter-box" style="margin-top:32px"><div class="form-grid" style="grid-template-columns:1fr">' +
+      '<div><label class="flabel" for="adm-search">Tìm theo tên hoặc SĐT</label><input class="field-input" id="adm-search" placeholder="Ví dụ: Nguyễn hoặc 0909…" value="' + esc(adminState.search) + '" /></div>' +
+      '<div><label class="flabel" for="adm-brand">Thương hiệu</label><select class="field-input" id="adm-brand">' + brandOpts + "</select></div>" +
+      '<div><label class="flabel" for="adm-status">Trạng thái</label><select class="field-input" id="adm-status">' + statusOpts + "</select></div>" +
+    "</div></section>" +
+    '<p class="count-line" role="status">Hiển thị ' + regs.length + " đăng ký</p>" + listHTML +
+  "</div></main>";
+}
+
+/* ================= 404 ================= */
+function notFoundPage(){
+  return '<main><div class="wrap notfound"><p class="code">404</p><h1 style="margin-top:12px;font-size:24px;font-weight:800;color:var(--navy)">Trang không tồn tại</h1><p style="margin-top:12px;color:var(--slate)">Đường dẫn này không thuộc website Bản Việt. Quay về trang chủ để tiếp tục khám phá hệ sinh thái.</p><a class="btn" style="margin-top:28px" href="#/home">Về trang chủ</a></div></main>';
+}
+
+/* ================= Router & khởi tạo ================= */
+var routeKey = "";
+function render(){
+  var r = parseRoute();
+  var key = r.path + "?" + r.query.toString();
+  var samePage = key === routeKey;
+  routeKey = key;
+  var main = "";
+  switch (r.page) {
+    case "home": main = homePage(); break;
+    case "gioi-thieu": main = aboutPage(); break;
+    case "he-sinh-thai": main = ecosystemPage(); break;
+    case "thuong-hieu": { var b = brandOf(r.param); main = b ? brandDetailPage(b) : notFoundPage(); break; }
+    case "khoa-hoc": {
+      if (!samePage) {
+        var init = r.query.toString();
+        courseState = { brand: "all", audience: "all" };
+        if (BRANDS.some(function(x){ return x.slug === init; })) courseState.brand = init;
+        else if (AUDIENCE_FILTERS.some(function(x){ return x.v === init; })) courseState.audience = init;
+      }
+      main = coursesPage(); break;
+    }
+    case "khoa-hoc-chi-tiet": { var c = courseOf(r.param); main = c ? courseDetailPage(c) : notFoundPage(); break; }
+    case "tin-tuc": main = newsListPage(); break;
+    case "bai-viet": { var n = null; NEWS.forEach(function(x){ if (x.slug === r.param) n = x; }); main = newsArticlePage(n); break; }
+    case "lien-he": main = contactPage(r.query); break;
+    case "quan-tri": main = adminPage(); break;
+    default: main = notFoundPage();
+  }
+  document.getElementById("app").innerHTML = '<div class="fade-in">' + headerHTML(r.page) + main + footerHTML() + "</div>";
+  wirePage(r);
+  initConsultForms();
+  if (!samePage) window.scrollTo(0, 0);
+}
+function wirePage(r){
+  var burger = document.getElementById("burger");
+  if (burger) burger.addEventListener("click", function(){ menuOpen = !menuOpen; renderSoft(); });
+  var ecoBtn = document.getElementById("eco-btn");
+  if (ecoBtn) ecoBtn.addEventListener("click", function(ev){ ev.stopPropagation(); ecoOpen = !ecoOpen; renderSoft(); });
+  document.querySelectorAll("[data-nav]").forEach(function(el){
+    el.addEventListener("click", function(){ navigate(el.getAttribute("data-nav")); });
+  });
+  document.querySelectorAll("[data-consult]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var v = (el.getAttribute("data-consult") || "").split("|");
+      goConsult(v[0] || undefined, v[1] || undefined);
+    });
+  });
+  document.querySelectorAll("[data-scroll]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var t = document.getElementById(el.getAttribute("data-scroll"));
+      if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+  document.querySelectorAll("[data-scroll-footer]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var f = document.querySelector("footer.site");
+      if (f) f.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+  var finderBtn = document.getElementById("finder-btn");
+  if (finderBtn) finderBtn.addEventListener("click", function(){
+    var sel = document.getElementById("finder");
+    var opt = FINDER_OPTIONS[Number(sel.value) || 0];
+    if (opt) navigate(opt.hash);
+  });
+  document.querySelectorAll("[data-cbrand]").forEach(function(el){
+    el.addEventListener("click", function(){ courseState.brand = el.getAttribute("data-cbrand"); render(); });
+  });
+  document.querySelectorAll("[data-caud]").forEach(function(el){
+    el.addEventListener("click", function(){ courseState.audience = el.getAttribute("data-caud"); render(); });
+  });
+  document.querySelectorAll("[data-ncat]").forEach(function(el){
+    el.addEventListener("click", function(){ newsState.category = el.getAttribute("data-ncat"); render(); });
+  });
+  var admSearch = document.getElementById("adm-search");
+  if (admSearch) {
+    admSearch.addEventListener("input", function(){
+      adminState.search = admSearch.value;
+      var pos = admSearch.selectionStart;
+      render();
+      var again = document.getElementById("adm-search");
+      if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch (e) {} }
+    });
+    var ab = document.getElementById("adm-brand");
+    if (ab) ab.addEventListener("change", function(){ adminState.brand = ab.value; render(); });
+    var as = document.getElementById("adm-status");
+    if (as) as.addEventListener("change", function(){ adminState.status = as.value; render(); });
+  }
+  document.querySelectorAll("[data-status-for]").forEach(function(sel){
+    sel.addEventListener("change", function(){
+      setRegStatus(Number(sel.getAttribute("data-status-for")), sel.value);
+      render();
+    });
+  });
+}
+function renderSoft(){
+  /* Vẽ lại giữ nguyên vị trí cuộn (dùng cho mở/đóng menu) */
+  var y = window.scrollY;
+  var r = parseRoute();
+  var main = document.querySelector("main");
+  var mainHTML = main ? main.outerHTML : "";
+  void mainHTML;
+  render();
+  window.scrollTo(0, y);
+}
+document.addEventListener("click", function(ev){
+  if (ecoOpen) {
+    var dd = document.getElementById("eco-dropdown");
+    var btn = document.getElementById("eco-btn");
+    if (dd && !dd.contains(ev.target) && btn && !btn.contains(ev.target)) { ecoOpen = false; renderSoft(); }
+  }
+});
+window.addEventListener("hashchange", function(){ menuOpen = false; ecoOpen = false; render(); });
+if (!location.hash) location.hash = "/home";
+render();
+</script>
+  </body>
+</html>
